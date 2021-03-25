@@ -6,7 +6,7 @@ name: 京豆签到类
 on:
   workflow_dispatch:
   schedule:
-    - cron: '7 15,17,19 * * *'
+    - cron: '35 15,17 * * *'
   # watch:
   #   types: started
   repository_dispatch:
