@@ -19,15 +19,15 @@ inputs:
     - timer: # 签到
         parameters:
           name: jd_bean_sign
-          cronExpression: "0 0 0,7 * * * *"
+          cronExpression: "1 1 0,7 * * * *"
           enable: true
           argument: jd_bean_sign
     - timer: # 京小超兑换奖品# 摇京豆
         parameters:
           name: jd_blueCoin_jd_club_lottery
-          cronExpression: "0 0 0 * * * *"
+          cronExpression: "3 3 0 * * * *"
           enable: true
-          argument: jd_blueCoin&jd_club_lottery
+          argument: jd_get_share_code&jd_blueCoin&jd_club_lottery
     - timer: # 东东农场# 东东萌宠
         parameters:
           name: jd_fruit_jd_pet
@@ -76,6 +76,12 @@ inputs:
           cronExpression: "0 3 1 * * * *"
           enable: true
           argument: jd_pigPet&jd_syj&jd_kd&jd_watch&jd_jdzz&jr_sign
+     - timer: #财富岛 #财富岛兑换 #财富岛提现 #京喜工厂plus #京喜农场 #京喜工厂商品列表详情
+        parameters:
+          name: jx_cfd
+          cronExpression: "0 35 1 * * * *"
+          enable: true
+          argument: jx_cfd&jx_cfd_exchange&jx_cfdtx&jx_factory_component&jx_nc&jx_products_detail
   environment: #  环境变量
     variables: #  环境变量对象
       AAA: BBB # 不要删除，用来格式化对齐追加的变量的
