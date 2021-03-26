@@ -76,12 +76,6 @@ inputs:
           cronExpression: "0 3 1 * * * *"
           enable: true
           argument: jd_pigPet&jd_syj&jd_kd&jd_watch&jd_jdzz&jr_sign
-     - timer: #财富岛 #财富岛兑换 #财富岛提现 #京喜工厂plus #京喜农场 #京喜工厂商品列表详情
-        parameters:
-          name: jx_cfd
-          cronExpression: "0 35 1 * * * *"
-          enable: true
-          argument: jx_cfd&jx_cfd_exchange&jx_cfdtx&jx_factory_component&jx_nc&jx_products_detail
   environment: #  环境变量
     variables: #  环境变量对象
       AAA: BBB # 不要删除，用来格式化对齐追加的变量的
