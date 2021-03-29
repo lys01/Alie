@@ -24,11 +24,9 @@ jobs:
           node-version: 10.x
       - name: npm install
         run: |
-          cd ~/scripts
           npm install
       - name: '运行 【京东直播】'
         run: |
-          cd ~/scripts
           node jd_live.js
           node jd_live_redrain.js
         env:
