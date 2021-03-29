@@ -31,7 +31,7 @@ jobs:
 
       - name: '运行 【京东直播:】'
         run: |
-          cd ~/scripts
+          #cd ~/scripts
           npm install
           node jd_live.js
           node jd_live_redrain.js
