@@ -6,7 +6,7 @@ name: 京东直播
 on:
   workflow_dispatch:
   schedule:
-    - cron: '30-50/5 4,12-15/1 * * * '
+    - cron: '40 */2 * * * '
   # watch:
   #   types: started
   repository_dispatch:
@@ -28,7 +28,7 @@ jobs:
       - name: '运行 【京东直播】'
         run: |
           node jd_live.js
-          node jd_live_redrain.js
+          #node jd_live_redrain.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           JD_DEBUG: ${{ secrets.JD_DEBUG }}
