@@ -1,5 +1,5 @@
 const $ = new Env('免费拿');
-const fs = require('fs');
+//const fs = require('fs');
 const notify = $.isNode() ? require('./sendNotify') : '';
 //Node.js用户请在jdCookie.js处填写京东ck;
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
@@ -51,14 +51,14 @@ if ($.isNode()) {
     .finally(() => {
       $.done();
     })
-async function writeFile() {
-  const info = {
-    "inBargaining": $.inBargaining,
-  }
-  if (!fs.existsSync(`./shareCodes`)) fs.mkdirSync(`./shareCodes`);
-  await fs.writeFileSync(`./shareCodes/jd_barGain.json`, JSON.stringify(info));
-  console.log(`文件写入成功`);
-}
+//async function writeFile() {
+ // const info = {
+  //  "inBargaining": $.inBargaining,
+ // }
+  //if (!fs.existsSync(`./shareCodes`)) fs.mkdirSync(`./shareCodes`);
+  //await fs.writeFileSync(`./shareCodes/jd_barGain.json`, JSON.stringify(info));
+  //console.log(`文件写入成功`);
+//}
 function showMsg() {
   message += `本次运行获得${$.beans}京豆`
   return new Promise(resolve => {
