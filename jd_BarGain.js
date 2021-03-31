@@ -43,14 +43,14 @@ if ($.isNode()) {
       // await showMsg();
     }
   }
-  await writeFile();
-})()
-    .catch((e) => {
-      $.log('', `? ${$.name}, 失败! 原因: ${e}!`, '')
-    })
-    .finally(() => {
-      $.done();
-    })
+//  await writeFile();
+//})()
+//    .catch((e) => {
+ //     $.log('', `? ${$.name}, 失败! 原因: ${e}!`, '')
+//    })
+ //   .finally(() => {
+ //     $.done();
+ //   })
 //async function writeFile() {
  // const info = {
   //  "inBargaining": $.inBargaining,
