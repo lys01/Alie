@@ -2,7 +2,7 @@
 # This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 
-name: 全民开红包
+name: 杂七杂八
 
 on:
   workflow_dispatch:
@@ -26,11 +26,19 @@ jobs:
       - name: npm install
         run: |
           npm install
-      - name: '运行 【全民开红包】'
+      - name: '运行 【杂七杂八】'
         run: |
-          node jd_redPacketnew.js
-          node jd_jxFactoryCreateTuan.js
-          node jd_BarGain.js
+          node z_carnivalcity.js
+          node z_entertainment.js
+          node z_getFanslove.js
+          node z_fanslove.js
+          node z_marketLottery.js
+          node z_shake.js
+          node z_super5g.js
+          node monk_shop_add_to_car.js
+          node monk_inter_shop_sign.js
+          node monk_shop_follow_sku.js
+          node monk_shop_lottery.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           JD_DEBUG: ${{ secrets.JD_DEBUG }}
