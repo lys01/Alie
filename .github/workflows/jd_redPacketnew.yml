@@ -29,16 +29,16 @@ jobs:
       - name: '运行 【杂七杂八】'
         run: |
           node z_carnivalcity.js
-          node z_entertainment.js
-          node z_getFanslove.js
-          node z_fanslove.js
-          node z_marketLottery.js
-          node z_shake.js
-          node z_super5g.js
-          node monk_shop_add_to_car.js
-          node monk_inter_shop_sign.js
-          node monk_shop_follow_sku.js
-          node monk_shop_lottery.js
+          #node z_entertainment.js
+          #node z_getFanslove.js
+          #node z_fanslove.js
+          #node z_marketLottery.js
+          #node z_shake.js
+          #node z_super5g.js
+          #node monk_shop_add_to_car.js
+          #node monk_inter_shop_sign.js
+          #node monk_shop_follow_sku.js
+          #node monk_shop_lottery.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           JD_DEBUG: ${{ secrets.JD_DEBUG }}
