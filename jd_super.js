@@ -52,7 +52,7 @@ let actId = "ba6fdecdda804e5997125eaddabd33f3"
   await writeFile()
 })()
   .catch((e) => {
-    $.log('', `? ${$.name}, 失败! 原因: ${e}!`, '')
+    $.log('', `❌ ${$.name}, 失败! 原因: ${e}!`, '')
   })
   .finally(() => {
     $.done();
@@ -66,7 +66,7 @@ async function jdWish() {
   await getPrize()
 }
 async function writeFile() {
-  console.log($.tuanList.length)
+  console.log(`未成团账号数量：${$.tuanList.length}`)
   if(!$.tuanList) return
   if (!fs.existsSync(`./shareCodes`)) fs.mkdirSync(`./shareCodes`);
   await fs.writeFileSync(`./shareCodes/jd_super.json`, JSON.stringify($.tuanList));
@@ -98,14 +98,19 @@ function getUserTuanInfo() {
         } else {
           if (safeGet(data)) {
             data = JSON.parse(data);
-            if(data.code==='0'){
+            if (data.code === '0') {
               $.tuan = {
                 "activityId": actId,
-                "assistId":data.result.assistId
+                "assistId": data.result.assistId
               }
-              console.log(`开团成功，团队信息：${JSON.stringify($.tuan)}`)
-              $.tuanList.push($.tuan)
-            }else{
+              console.log(`进度：${data.result.assistValue}/${data.result.bigPrizeThreshold}`)
+              if (data.result.assistValue === data.result.bigPrizeThreshold) {
+                console.log(`已经满团`)
+              } else {
+                $.tuanList.push($.tuan)
+                console.log(`开团成功，团队信息：${JSON.stringify($.tuan)}`)
+              }
+            } else {
               console.log(data.msg)
             }
           }
@@ -149,7 +154,7 @@ function share() {
                 "activityId": actId,
                 "assistId":data.result.assistId
               }
-              console.log(`开团成功，团队信息：${JSON.stringify($.tuan)}`)
+              // console.log(`开团成功，团队信息：${JSON.stringify($.tuan)}`)
               // $.tuanList.push($.tuan)
             }else{
               console.log(data.msg)
