@@ -27,7 +27,7 @@ jobs:
           npm install
       - name: '运行 【测试杂七杂八】'
         run: |
-          node z_carnivalcity.js
+          node jd_carnivalcity.js
           #node jd_live_redrain.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
