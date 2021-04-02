@@ -6,7 +6,7 @@ name:口袋书店+加密版京喜农场
 on:
   workflow_dispatch:
   schedule:
-    - cron: '20 16,6 * * *'
+    - cron: '20 0,4,10 * * *'
   watch:
     types: started
   repository_dispatch:
@@ -19,8 +19,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-        with:
-          repository: hajiuhajiu/jdsign1112
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
