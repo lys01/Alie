@@ -34,8 +34,7 @@ jobs:
           npm install
       - name: '【手机狂欢城】'
         run: |
-         curl https://raw.githubusercontent.com/monk-coder/dust/dust/i-chenzhe/z_carnivalcity.js -o jd_carnivalcity.js
-          node jd_carnivalcity.js
+         node jd_carnivalcity.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           JD_USER_AGENT: ${{ secrets.JD_USER_AGENT }}
