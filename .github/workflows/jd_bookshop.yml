@@ -35,7 +35,7 @@ jobs:
       - name: npm install
         run: |
           npm install
-      - name: '运行 【口袋书店】'
+      - name: '运行 【jd_crazy_joy_coin】'
         run: |
           random_time=$(($RANDOM % 2))
           echo "等待 ${random_time} 分钟后开始执行"
