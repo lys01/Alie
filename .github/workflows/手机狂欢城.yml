@@ -6,7 +6,7 @@ name: 手机狂欢城
 on:
   workflow_dispatch:
   schedule:
-    - cron: '1 15,16,17,20 * * * '
+    - cron: '5 4,12,16,22 1-21 4 * '
   # watch:
   #   types: started
   repository_dispatch:
