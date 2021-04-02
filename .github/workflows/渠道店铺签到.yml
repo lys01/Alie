@@ -6,7 +6,7 @@ name: 渠道店铺签到
 on:
   workflow_dispatch:
   schedule:
-    - cron: '1 16 * * *'
+    - cron: '1 16,18 * * *'
   repository_dispatch:
     types: z_entertainment
 jobs:
