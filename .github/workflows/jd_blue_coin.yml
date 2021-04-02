@@ -42,7 +42,7 @@ jobs:
       - name: '等待12点'
         run: |
               python3 wait24.py 0.1 0.1 29
-      - name: '开始换豆''
+      - name: '开始换豆'
         run: |
           node jd_blueCoin.js
           node jd_blueCoin20.js
