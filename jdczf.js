@@ -1,6 +1,6 @@
 const cookieName ='京东成长分'
 const cookieKey = 'chen_cookie_jingdong'
-const chen = new Env('')//init()
+const chen = new Env('京东成长分')//init()
 let cookieVal = chen.getdata(cookieKey)
 if (chen.isNode()) {
   if (!cookieVal) {
