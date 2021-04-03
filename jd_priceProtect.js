@@ -393,7 +393,7 @@ function TotalBean() {
 							return
 						}
 						$.isLogin = true
-						$.nickName = data['base'].nickname;
+						$.nickName = (data['base'] && data['base'].nickname) || $.UserName;
 					} else {
 						console.log(`京东服务器返回空数据`)
 					}
