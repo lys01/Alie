@@ -32,7 +32,7 @@ jobs:
       - name: npm install
         run: |
           npm install
-      - name: '天天提鹅
+      - name: '天天提鹅'
         run: |
           node jd_daily_egg.js 
         env:
