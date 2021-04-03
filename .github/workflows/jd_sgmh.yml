@@ -6,7 +6,7 @@ name: 闪购盲盒
 on:
   workflow_dispatch:
   schedule:
-    - cron: '21 4,8 * * *'
+    - cron: '21 4,16 * * *'
   repository_dispatch:
     types: 闪购盲盒
 jobs:
