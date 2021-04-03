@@ -1,14 +1,14 @@
 # This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 
-name: 5G超级盲盒-430结束
+name: 手机狂欢城2-430结束
 
 on:
   workflow_dispatch:
   schedule:
     - cron: '5 4,12,16,22 * 4 *'
   repository_dispatch:
-    types: 5G超级盲盒
+    types: 手机狂欢城2
 jobs:
   build:
 
@@ -32,7 +32,7 @@ jobs:
       - name: npm install
         run: |
           npm install
-      - name: '5g盲盒'
+      - name: '手机狂欢城2'
         run: |
           node jd_s5g.js 
         env:
