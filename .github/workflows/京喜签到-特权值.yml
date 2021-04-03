@@ -6,11 +6,11 @@ name: 京喜签到/特权值
 on:
   workflow_dispatch:
   schedule:
-    - cron: '30 15,2 * * *'
+    - cron: '55 15,2 * * *'
   watch:
     types: started
   repository_dispatch:
-    types: jd_11
+    types: 京喜签到
 jobs:
   build:
 
@@ -33,18 +33,11 @@ jobs:
       - name: npm install
         run: |
           npm install
-     # - name: Set up Python 3.7
-      #  uses: actions/setup-python@v2
-     #   with:
-      #    python-version: 3.7
-
       - name: '京喜签到/特权值'
         run: |
           node jx_sign.js
           node jdczf.js
           node jdtqz.js
-          
-          
           
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
