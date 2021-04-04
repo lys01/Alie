@@ -25,7 +25,7 @@ jobs:
           npm install
       - name: '关注有礼'
         run: |
-          node monk_shop_follow_sku.js 
+          node jd_shop_follow_sku.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           JD_USER_AGENT: ${{ secrets.JD_USER_AGENT }}
