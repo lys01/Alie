@@ -49,7 +49,7 @@ jobs:
           node jd_kd.js
           node jd_shake.js
           node jd_plus_bean.js
-          node jd_jump_jump.js
+          node z_mother_jump.js
           node jd_small_home.js
           
           
