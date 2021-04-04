@@ -35,9 +35,9 @@ jobs:
         uses: actions/setup-python@v2
         with:
          python-version: 3.7
-      - name: '京喜工厂定时'
-        run: |
-              python3 wait24.py 0.1 0.1 29
+      #- name: '京喜工厂定时'
+        #run: |
+              #python3 wait24.py 0.1 0.1 29
       - name: '京喜工厂'
         run: |
           node jd_jxfactoryn.js
