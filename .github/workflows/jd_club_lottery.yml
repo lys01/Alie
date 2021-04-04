@@ -31,7 +31,7 @@ jobs:
           python-version: 3.7
       - name: '定时运行'
         run: |
-              python3 wait24.py 0.1 0.1 29
+          python3 wait.py 23:59:59.990
       - name: '运行 【摇京豆脚本】'
         run: |
           node jd_club_lottery.js
