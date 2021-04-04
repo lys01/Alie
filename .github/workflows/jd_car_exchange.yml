@@ -6,7 +6,7 @@ name: 京东汽车兑换
 on:
   workflow_dispatch:
   schedule:
-    - cron: '50 15 * * *'
+    - cron: '15 15 * * *'
   watch:
     types: started
   repository_dispatch:
@@ -39,7 +39,7 @@ jobs:
           python-version: 3.7
       - name: '定时0点'
         run: |
-              python3 wait24.py 0.1 0.1 29
+          python3 wait.py 23:59:59.990
       - name: '京东汽车兑换'
         run: |
           node jd_car_exchange.js
