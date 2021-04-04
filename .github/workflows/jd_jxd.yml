@@ -5,7 +5,7 @@ name: 京小兑
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 2,8,14 * * *'
+    - cron: '0 2,8,11,14,16 * * *'
   repository_dispatch:
     types: 京小兑
 jobs:
