@@ -34,7 +34,8 @@ jobs:
           npm install
       - name: '店铺签到'
         run: |
-          node jd_dpqd.js 
+          node jd_dpqd.js
+          node jd_shop_sign.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           JD_USER_AGENT: ${{ secrets.JD_USER_AGENT }}
