@@ -39,7 +39,7 @@ jobs:
           python-version: 3.7
       - name: 阻塞运行
         run: |
-          python3 wait24.py
+          python3 wait.py 23:59:59.990
       - name: '运行 【京东排行榜】'
         run: |
           node jd_rankingList.js
