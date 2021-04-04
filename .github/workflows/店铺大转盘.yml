@@ -34,7 +34,7 @@ jobs:
           npm install
       - name: '店铺大转盘'
         run: |
-          node monk_shop_lottery.js 
+          node jd_shop_lottery.js 
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           JD_USER_AGENT: ${{ secrets.JD_USER_AGENT }}
@@ -49,4 +49,3 @@ jobs:
           DD_BOT_TOKEN: ${{ secrets.DD_BOT_TOKEN }}
           DD_BOT_SECRET: ${{ secrets.DD_BOT_SECRET }}
           IGOT_PUSH_KEY: ${{ secrets.IGOT_PUSH_KEY }}
-
