@@ -6,7 +6,7 @@ name: 5G超级盲盒
 on:
   workflow_dispatch:
   schedule:
-    - cron: '49 15,1-23/3 * 4 *'
+    - cron: '30 15,1-23/3 * 4 *'
   repository_dispatch:
     types: 5G超级盲盒
 jobs:
@@ -32,6 +32,13 @@ jobs:
       - name: npm install
         run: |
           npm install
+      - name: Set up Python 3.7
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.7
+      - name: '定时签到'
+        run: |
+            python3 wait.py 23:59:59.990
       - name: '5g超级盲盒'
         run: |
           node jd_mohe.js 
