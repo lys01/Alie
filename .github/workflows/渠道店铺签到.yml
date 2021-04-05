@@ -6,7 +6,7 @@ name: 渠道店铺签到
 on:
   workflow_dispatch:
   schedule:
-    - cron: '1 16,18 * * *'
+    - cron: '10 15,18 * * *'
   repository_dispatch:
     types: z_entertainment
 jobs:
@@ -31,7 +31,14 @@ jobs:
           key: ${{ runner.os }}-${{ env.cache-name }}-${{ hashFiles('package-lock.json') }} # 使用 package-lock.json 的 Hash 作为缓存的 key。也可以使用 package.json 代替
       - name: npm install
         run: |
-          npm install
+          npm install       
+      - name: Set up Python 3.7
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.7
+      - name: '定时签到'
+        run: |
+            python3 wait.py 23:59:59.990
       - name: '【渠道店铺签到】'
         run: |
          node monk_inter_shop_sign.js
