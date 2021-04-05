@@ -6,7 +6,7 @@ name: 京东直播红包
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 */1 * * *'
+    - cron: '0,10 12 * * *'
   # watch:
   #   types: started
   repository_dispatch:
