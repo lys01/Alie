@@ -44,6 +44,7 @@ jobs:
       - name: '创维签到'
         run: |
           curl https://raw.githubusercontent.com/monk-coder/dust/dust/normal/monk_skyworth.js -o jd_skyworth.js
+          sleep 5
           node jd_skyworth.js
           
         env:
