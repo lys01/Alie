@@ -34,7 +34,7 @@ jobs:
       - name: npm install
         run: |
           npm install
-      - name: '蒙牛有机牧场‘
+      - name: '蒙牛有机牧场'
         run: |
           node jd_monk_pasture.js
           
