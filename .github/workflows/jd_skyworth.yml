@@ -6,7 +6,7 @@ name: jd_skyworth-京东创维签到
 on:
   workflow_dispatch:
   schedule:
-    - cron: '30 15,12 * * *'
+    - cron: '30 15,0 * * *'
   repository_dispatch:
     types: 京东创维签到
 jobs:
@@ -43,8 +43,6 @@ jobs:
             python3 wait.py 23:59:59.990
       - name: '创维签到'
         run: |
-          curl https://raw.githubusercontent.com/monk-coder/dust/dust/normal/monk_skyworth.js -o jd_skyworth.js
-          sleep 5
           node jd_skyworth.js
           
         env:
