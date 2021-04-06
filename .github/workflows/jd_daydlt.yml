@@ -1,9 +1,9 @@
-﻿name: 天天优惠大乐透
+﻿name: jd_daydlt-天天优惠大乐透
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: '10 0 * * *'
+    - cron: '50 4,15 * * *'
   watch:
     types: started
   repository_dispatch:
