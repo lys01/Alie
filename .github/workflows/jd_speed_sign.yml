@@ -3,7 +3,7 @@ name: jd_speed_sign+jd_speed_redpocke签到及红包
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 16,23 * * *'
+    - cron: '30 15,23 * * *'
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -11,6 +11,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+        with:
+          repository: tubie75/jdqd
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
@@ -25,6 +27,13 @@ jobs:
       - name: npm install
         run: |
           npm install
+      - name: Set up Python 3.7
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.7
+      - name: '定时0点'
+        run: |
+          python3 wait.py 23:59:59.990
       - name: '急速版签到及红包'
         run: |
           node jd_speed_sign.js
