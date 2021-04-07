@@ -1,5 +1,5 @@
 # File: .github/workflows/repo-sync.yml
-name: sync-wuzhi01-scripts
+name: sync-shuye72-scripts
 on:
   schedule:
     - cron: '1 0,15 * * *'
