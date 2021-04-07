@@ -1,4 +1,4 @@
-name: 急速版签到及红包
+name: jd_speed_sign+jd_speed_redpocke签到及红包
 
 on:
   workflow_dispatch:
