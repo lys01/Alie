@@ -28,5 +28,5 @@ jobs:
         with:
           source_repo: "https://github.com/wuzhi03/MyActions.git"
           source_branch: "main"
-          destination_branch: "shuye72"
+          destination_branch: "JD-shuye72"
           github_token: ${{ secrets.PAT }}
