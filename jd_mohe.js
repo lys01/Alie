@@ -8,14 +8,11 @@
 [task_local]
 #5G超级盲盒
 0 0,1-23/3 * * * https://gitee.com/lxk0301/jd_scripts/raw/master/jd_mohe.js, tag=5G超级盲盒, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png, enabled=true
-
 =================================Loon===================================
 [Script]
 cron "0 0,1-23/3 * * *" script-path=https://gitee.com/lxk0301/jd_scripts/raw/master/jd_mohe.js,tag=5G超级盲盒
-
 ===================================Surge================================
 5G超级盲盒 = type=cron,cronexp="0 0,1-23/3 * * *",wake-system=1,timeout=3600,script-path=https://gitee.com/lxk0301/jd_scripts/raw/master/jd_mohe.js
-
 ====================================小火箭=============================
 5G超级盲盒 = type=cron,script-path=https://gitee.com/lxk0301/jd_scripts/raw/master/jd_mohe.js, cronexpr="0 0,1-23/3 * * *", timeout=3600, enable=true
  */
@@ -37,7 +34,7 @@ if ($.isNode()) {
 
 const JD_API_HOST = 'https://isp5g.m.jd.com';
 //邀请码一天一变化，已确定
-$.shareId = ['995f7b7c-249a-4022-a51e-250393649764','995f7b7c-249a-4022-a51e-250393649764'];
+$.shareId = [];
 !(async () => {
   if (!cookiesArr[0]) {
     $.msg($.name, '【提示】请先获取京东账号一cookie\n直接使用NobyDa的京东签到获取', 'https://bean.m.jd.com/bean/signIndex.action', {"open-url": "https://bean.m.jd.com/bean/signIndex.action"});
@@ -73,18 +70,14 @@ $.shareId = ['995f7b7c-249a-4022-a51e-250393649764','995f7b7c-249a-4022-a51e-250
         task1(),
       ])
       await taskList();
-      console.log(`当前小时数为：` + new Date().getHours())
-      // UTC时间，小时数为16的时候对应北京时间0点
-      if (new Date().getHours() === 16) {
-        await getAward();//抽奖
-      }
+      await getAward();//抽奖
     }
   }
   if (allMessage) {
     if ($.isNode()) await notify.sendNotify($.name, allMessage);
     $.msg($.name, '', allMessage, {"open-url": "https://isp5g.m.jd.com"})
   }
-  /*await $.http.get({url: `https://code.c-hiang.cn//api/v1/jd/mohe/read/20`, timeout: 10000}).then(async (resp) => {
+  await $.http.get({url: `https://code.c-hiang.cn//api/v1/jd/mohe/read/20`, timeout: 10000}).then(async (resp) => {
     if (resp.statusCode === 200) {
       try {
         let { body } = resp;
@@ -96,7 +89,7 @@ $.shareId = ['995f7b7c-249a-4022-a51e-250393649764','995f7b7c-249a-4022-a51e-250
         console.log(`读取邀请码异常:${e}`)
       }
     }
-  }).catch((e) => console.log(`catch 读取邀请码异常:${e}`));*/
+  }).catch((e) => console.log(`catch 读取邀请码异常:${e}`));
   for (let v = 0; v < cookiesArr.length; v++) {
     cookie = cookiesArr[v];
     $.index = v + 1;
@@ -110,7 +103,7 @@ $.shareId = ['995f7b7c-249a-4022-a51e-250393649764','995f7b7c-249a-4022-a51e-250
         break
       }
     }
-    /*console.log(`\n\n如果有剩余助力机会则随机互助`);
+    console.log(`\n\n如果有剩余助力机会则随机互助`);
     for (let item of $.body || []) {
       console.log(`账号 ${$.index} ${$.UserName} 开始给 ${item}进行助力`)
       const res = await addShare(item);
@@ -118,7 +111,7 @@ $.shareId = ['995f7b7c-249a-4022-a51e-250393649764','995f7b7c-249a-4022-a51e-250
         console.log(`次数已用完，跳出助力`)
         break
       }
-    }*/
+    }
   }
 })()
     .catch((e) => {
@@ -546,7 +539,7 @@ function taskurl(url) {
     }
   }
 }
-function updateShareCodesCDN(url = 'https://gitee.com/lxk0301/updateTeam/raw/master/shareCodes/jd_shareCodes.json') {
+function updateShareCodesCDN(url = 'https://cdn.jsdelivr.net/gh/gitupdate/updateTeam@master/shareCodes/jd_shareCodes.json') {
   return new Promise(resolve => {
     $.get({
       url ,
