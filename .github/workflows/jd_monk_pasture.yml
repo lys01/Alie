@@ -52,6 +52,6 @@ jobs:
           DD_BOT_TOKEN: ${{ secrets.DD_BOT_TOKEN }}
           DD_BOT_SECRET: ${{ secrets.DD_BOT_SECRET }}
           IGOT_PUSH_KEY: ${{ secrets.IGOT_PUSH_KEY }}
-          PASTURE_EXCHANGE_KEYWORD: ${{ '10京豆' }}
+          PASTURE_EXCHANGE_KEYWORD: ${{ '1京豆' }}
 
 
