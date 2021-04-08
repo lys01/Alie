@@ -104,7 +104,7 @@ if ($.isNode()) {
       if (!$.isLogin) {
         continue
       }
-      if ($.canHelp) await joinLeaderTuan();//参团
+      //if ($.canHelp) await joinLeaderTuan();//参团
       $.UserName = decodeURIComponent(cookie.match(/pt_pin=([^; ]+)(?=;?)/) && cookie.match(/pt_pin=([^; ]+)(?=;?)/)[1])
       if ((cookiesArr && cookiesArr.length >= ($.tuanNum || 5)) && $.canHelp) {
         console.log(`\n账号内部相互进团\n`);
@@ -114,6 +114,7 @@ if ($.isNode()) {
           await JoinTuan(item);
         }
       }
+      if ($.canHelp) await joinLeaderTuan();//参团
     }
   }
   if ($.isNode() && allMessage) {
