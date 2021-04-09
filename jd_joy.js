@@ -53,7 +53,7 @@ let teamLevel = `2`;//参加多少人的赛跑比赛，默认是双人赛跑，�
 // 默认 'true' 参加双人赛跑，如需关闭 ，请改成 'false';
 let joyRunFlag = true;
 let jdNotify = true;//是否开启静默运行，默认true开启
-let joyRunNotify = false;//宠汪汪赛跑获胜后是否推送通知，true推送，false不推送通知
+let joyRunNotify = true;//宠汪汪赛跑获胜后是否推送通知，true推送，false不推送通知
 const JD_API_HOST = 'https://jdjoy.jd.com/pet'
 const weAppUrl = 'https://draw.jdfcloud.com//pet';
 !(async () => {
@@ -322,7 +322,7 @@ async function petTask() {
           const body = {
             "marketLink": scanMarketItem.marketLink,
             "taskType": "ScanMarket",
-            "reqSource": "weapp"
+            //"reqSource": "weapp"
           };
           const scanMarketRes = await scanMarket('scan', body);
           console.log(`逛会场-${scanMarketItem.marketName}结果::${JSON.stringify(scanMarketRes)}`)
@@ -462,7 +462,7 @@ function scanMarket(type, body, cType = 'application/json') {
     const reqSource = 'weapp';
     let opt = {
       // url: "//jdjoy.jd.com/common/pet/getPetTaskConfig?reqSource=h5",
-      url: `//draw.jdfcloud.com/common/pet/${type}?reqSource=h5`,
+      url: `//draw.jdfcloud.com/common/pet/${type}?reqSource=weapp`,
       method: "POST",
       data: body,
       credentials: "include",
