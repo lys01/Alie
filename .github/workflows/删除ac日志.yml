@@ -7,11 +7,12 @@ on:
 jobs:
   del_runs:
     runs-on: ubuntu-latest
-    steps:
-      - name: Delete_workflow_runs
-        uses: smallprogram/delete-workflow-runs@main
+    - name: Delete workflow runs
+        uses: Mattraks/delete-workflow-runs@main
         with:
-          token: ${{ secrets.TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           repository: ${{ github.repository }}
+          retain_days: ${{ github.event.inputs.days }}
+          keep_minimum_runs: ${{ github.event.inputs.runs }}
           retain_days: 2
           keep_minimum_runs: 6
