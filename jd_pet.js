@@ -31,12 +31,12 @@ let cookiesArr = [], cookie = '', jdPetShareArr = [], isBox = false, notify, new
 //下面给出两个账号的填写示例（iOS只支持2个京东账号）
 let shareCodes = [ // IOS本地脚本用户这个列表填入你要助力的好友的shareCode
    //账号一的好友shareCode,不同好友的shareCode中间用@符号隔开
-  'MTAxODc2NTEzNDAwMDAwMDAyMDIwNTMwOQ==@MTAxODcxOTI2NTAwMDAwMDAyMDA1NTg1Nw==',
+  'MTE1NDQ5OTUwMDAwMDAwNDYzODc1NDM=@MTEyNDI1MTYxMDAwMDAwMDQ3MzkyNDM5',
   //账号二的好友shareCode,不同好友的shareCode中间用@符号隔开
-  'MTAxODc2NTEzNDAwMDAwMDAyMDIwNTMwOQ==@MTAxODcxOTI2NTAwMDAwMDAyMDA1NTg1Nw==',
+  'MTE1NDQ5OTUwMDAwMDAwNDYzODc1NDM=@MTEyNDI1MTYxMDAwMDAwMDQ3MzkyNDM5',
 ]
 let message = '', subTitle = '', option = {};
-let jdNotify = false;//是否关闭通知，false打开通知推送，true关闭通知推送
+let jdNotify = true;//是否关闭通知，false打开通知推送，true关闭通知推送
 const JD_API_HOST = 'https://api.m.jd.com/client.action';
 let goodsUrl = '', taskInfoKey = [];
 let randomCount = $.isNode() ? 20 : 5;
