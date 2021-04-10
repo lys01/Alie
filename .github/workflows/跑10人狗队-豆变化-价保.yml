@@ -1,11 +1,11 @@
 # This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 
-name: 跑10人狗队/豆变化/价保
+name: jd_bean_change-京豆变化
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 1 * * *'
+    - cron: '0 16,23 * * *'
   watch:
     types: started
   repository_dispatch:
@@ -26,9 +26,9 @@ jobs:
           npm install
       - name: '运行 【京豆变动通知】'
         run: |
-          node jd_joywyw.js
+          #node jd_joywyw.js
           node jd_bean_change.js
-          node jd_priceProtect.js
+          #node jd_priceProtect.js
           
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
