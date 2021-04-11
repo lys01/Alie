@@ -6,7 +6,7 @@ name: jd_jdzz-京东赚赚
 on:
   workflow_dispatch:
   schedule:
-    - cron: '45 15,16 * * *'
+    - cron: '7 2,15,16,17 * * *'
   watch:
     types: started
   repository_dispatch:
@@ -33,6 +33,9 @@ jobs:
       - name: npm install
         run: |
           npm install
+      - name: '等待'
+        run: |
+          python3 wait_hour.py 1,2,11,24
       - name: '运行京东赚赚'
         run: |
           node jd_jdzz.js
