@@ -33,9 +33,13 @@ jobs:
       - name: npm install
         run: |
           npm install
+      - name: Set up Python 3.7
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.7
       - name: '等待'
         run: |
-          python3 wait_hour.py 1,2,11,24
+              python3 wait24.py 0.1 0.1 29
       - name: '运行京东赚赚'
         run: |
           node jd_jdzz.js
