@@ -19,8 +19,8 @@ if (len(sys.argv) == 2 and "-" in sys.argv[1]):
 		target_hour = hour+1
 else :
 	for i in range(1, len(sys.argv)):
-		if (hour < int(sys.argv[i])):
-			target_hour = int(sys.argv[i])
+		if (hour < int(float(sys.argv[i]))):
+			target_hour = int(float(sys.argv[i]))
 			break
 
 if target_hour == -1:
