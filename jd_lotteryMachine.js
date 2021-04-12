@@ -1,6 +1,6 @@
 /*
 京东抽奖机
-更新时间：2021-03-26 18:19
+更新时间：2021-04-12 10:57
 脚本说明：抽奖活动,有新活动可以@我或者提Issues
 脚本兼容: QuantumultX, Surge, Loon, JSBox, Node.js
 // quantumultx
@@ -17,11 +17,11 @@ const $ = new Env('京东抽奖机');
 const STRSPLIT = "|";
 const needSum = false;            //是否需要显示汇总
 const printDetail = false;        //是否显示出参详情
-const appIdArr = ['1EFRRxA','1EFRQwA','1EFRTyg','1EFRSyw','1EFRXxg','1EFRWyg','1EFRWyw','1EFRZwA','1EFRZwQ','1EFRZxg','1EFRZxw','1EFRZxQ']
+const appIdArr = ['1EFRRxA','1EFRQwA','1EFRTyg','1EFRSyw','1EFRXxg','1EFRWyg','1EFRWyw','1EFRZwA','1EFRZwQ','1EFRYwA']
 const shareCodeArr = ['T0225KkcR0pI9lDVdRnznKYKJwCjVQmoaT5kRrbA','T0225KkcRRsY8lLfch-hwvIJIgCjVQmoaT5kRrbA']
-const homeDataFunPrefixArr = ['interact_template','interact_template','','','','','','','','','','','','','','','','','interact_template','interact_template','']
-const collectScoreFunPrefixArr = ['','','','','','','','','','','','','','','','','','','interact_template','interact_template','','']
-const lotteryResultFunPrefixArr = ['','','','','','','','','','','','','','','','','','','','interact_template','interact_template','','']
+const homeDataFunPrefixArr = ['interact_template','interact_template','','','','','','','','','','','','','','','','','interact_template','interact_template']
+const collectScoreFunPrefixArr = ['','','','','','','','','','','','','','','','','','','interact_template','interact_template']
+const lotteryResultFunPrefixArr = ['','','','','','','','','','','','','','','','','','','','interact_template','interact_template']
 let merge = {}
 //IOS等用户直接用NobyDa的jd cookie
 let cookiesArr = [], cookie = '';
