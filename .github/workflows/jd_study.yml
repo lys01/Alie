@@ -1,6 +1,6 @@
 
 # File: .github/workflows/repo-sync.yml
-name: sync-jd_study
+name: jd_study
 on:
   schedule:
     - cron: '5 15 * * *'
