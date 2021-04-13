@@ -10,7 +10,7 @@ on:
   push:
     branches: [ master ]
   repository_dispatch:
-    types: sync-JD-Study
+    types: jd_study
 jobs:
   repo-sync:
     env:
