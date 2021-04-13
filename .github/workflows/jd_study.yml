@@ -1,6 +1,6 @@
 
 # File: .github/workflows/repo-sync.yml
-name: sync-jd_scripts
+name: sync-jd_study
 on:
   schedule:
     - cron: '1 0,15 * * *'
@@ -10,7 +10,7 @@ on:
   push:
     branches: [ master ]
   repository_dispatch:
-    types: sync-JD-Shylocks-scripts
+    types: sync-JD-Study
 jobs:
   repo-sync:
     env:
