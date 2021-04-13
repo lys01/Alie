@@ -39,7 +39,7 @@ jobs:
           python-version: 3.7
       - name: '等待'
         run: |
-              python3 wait24.py 0.1 0.1 29
+              python3 wait_hour.py 1 2 11 24
       - name: '运行京东赚赚'
         run: |
           node jd_jdzz.js
