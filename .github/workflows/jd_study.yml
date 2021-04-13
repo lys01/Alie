@@ -3,7 +3,7 @@
 name: sync-jd_study
 on:
   schedule:
-    - cron: '1 0,15 * * *'
+    - cron: '5 15 * * *'
   workflow_dispatch:
   watch:
     types: started
