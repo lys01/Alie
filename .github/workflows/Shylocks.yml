@@ -1,5 +1,5 @@
 # File: .github/workflows/repo-sync.yml
-name: sync-JD-Shylocks-scripts
+name: Shylocks
 on:
   schedule:
     - cron: '1 14 * * *'
