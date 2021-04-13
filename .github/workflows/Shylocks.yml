@@ -2,7 +2,7 @@
 name: sync-JD-Shylocks-scripts
 on:
   schedule:
-    - cron: '1 0,15 * * *'
+    - cron: '1 14 * * *'
   workflow_dispatch:
   watch:
     types: started
