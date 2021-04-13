@@ -9,7 +9,7 @@ on:
   push:
     branches: [ master ]
   repository_dispatch:
-    types: sync-wuzhi01-scripts
+    types: shuye
 jobs:
   repo-sync:
     env:
