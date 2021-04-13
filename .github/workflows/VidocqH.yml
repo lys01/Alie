@@ -9,7 +9,7 @@ on:
   push:
     branches: [ master ]
   repository_dispatch:
-    types: sync-VidocqH-scripts
+    types: VidocqH
 jobs:
   repo-sync:
     env:
