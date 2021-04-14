@@ -2,31 +2,22 @@
 超级直播间红包雨
 下一场直播时间:04月14日  20:00，ID：3861625
 30,31 20-23/1 14 4 *
-下一场直播时间:04月13日  20:00，ID：3866703
-30,31 20-23/1 13 4 *
 脚本兼容: Quantumult X, Surge, Loon, JSBox, Node.js
 ==============Quantumult X==============
 [task_local]
 #超级直播间红包雨
 0,30,31 20-23/1 * * * https://gitee.com/lxk0301/jd_scripts/raw/master/jd_live_redrain.js, tag=超级直播间红包雨, enabled=true
-
 ==============Loon==============
 [Script]
 cron "0,30,31 20-23/1 * * *" script-path=https://gitee.com/lxk0301/jd_scripts/raw/master/jd_live_redrain.js,tag=超级直播间红包雨
-
 ================Surge===============
 超级直播间红包雨 = type=cron,cronexp="0,30,31 20-23/1 * * *",wake-system=1,timeout=3600,script-path=https://gitee.com/lxk0301/jd_scripts/raw/master/jd_live_redrain.js
-
 ===============小火箭==========
 超级直播间红包雨 = type=cron,script-path=https://gitee.com/lxk0301/jd_scripts/raw/master/jd_live_redrain.js, cronexpr="0,30,31 20-23/1 * * *", timeout=3600, enable=true
 */
 const $ = new Env('超级直播间红包雨');
 let allMessage = '';
 let bodyList = {
-  "13": {
-    "url": "https://api.m.jd.com/client.action?functionId=liveActivityV946&uuid=8888888&client=apple&clientVersion=9.4.1&st=1617851035011&sign=ce3542c09121b1474c0beba1413fec13&sv=112",
-    "body": "body=%7B%22liveId%22%3A%223866703%22%7D"
-  },
   "14": {
     "url": "https://api.m.jd.com/client.action?functionId=liveActivityV946&uuid=8888888&client=apple&clientVersion=9.4.1&st=1617851034027&sign=811dcdb1ef6f4e775f7ccf4f42d73a7a&sv=111",
     "body": "body=%7B%22liveId%22%3A%223861625%22%7D"
@@ -80,8 +71,7 @@ const JD_API_HOST = 'https://api.m.jd.com/api';
     return;
   }
   console.log('下一场直播时间:04月14日  20:00，ID：3861625\n' +
-      '30,31 20-23/1 14 4 *\n' +
-      '下一场直播时间:04月13日  20:00，ID：3866703')
+      '30,31 20-23/1 14 4 *')
   await getRedRain();
 
   let nowTs = new Date().getTime()
