@@ -5,7 +5,7 @@ name: jd_bean_change-京豆变化
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 16,23 * * *'
+    - cron: '40 2,15 * * *'
   watch:
     types: started
   repository_dispatch:
@@ -24,6 +24,13 @@ jobs:
       - name: npm install
         run: |
           npm install
+      - name: Set up Python 3.7
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.7
+      - name: '定时签到'
+        run: |
+            python3 wait.py 23:59:59.999
       - name: '运行 【京豆变动通知】'
         run: |
           #node jd_joywyw.js
