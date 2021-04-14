@@ -2,7 +2,7 @@
 # This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 
-name: 百变大咖秀
+name: z_entertainment-百变大咖秀
 
 on:
   workflow_dispatch:
@@ -11,7 +11,7 @@ on:
   # watch:
   #   types: started
   repository_dispatch:
-    types: live
+    types: z_entertainment
 jobs:
   build:
 
@@ -29,27 +29,6 @@ jobs:
       - name: '运行 【百变大咖秀】'
         run: |
           node z_entertainment.js
-          #node z_entertainment.js
-          #node z_getFanslove.js
-          #node z_fanslove.js
-          #node z_marketLottery.js
-          #node z_shake.js
-          #node z_super5g.js
-          #node monk_shop_add_to_car.js
-          #node monk_inter_shop_sign.js
-          #node monk_shop_follow_sku.js
-          #node monk_shop_lottery.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           JD_DEBUG: ${{ secrets.JD_DEBUG }}
-          JD_BEAN_STOP: ${{secrets.JD_BEAN_STOP}} #自定义延迟签到,单位毫秒. 默认分批并发无延迟. 延迟作用于每个签到接口, 如填入延迟则切换顺序签到(耗时较长)
-          JD_BEAN_SIGN_STOP_NOTIFY: ${{secrets.JD_BEAN_SIGN_STOP_NOTIFY}}
-          JD_BEAN_SIGN_NOTIFY_SIMPLE: ${{secrets.JD_BEAN_SIGN_NOTIFY_SIMPLE}}
-          PUSH_KEY: ${{ secrets.PUSH_KEY }}
-          BARK_PUSH: ${{ secrets.BARK_PUSH }}
-          TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
-          TG_USER_ID: ${{ secrets.TG_USER_ID }}
-          BARK_SOUND: ${{ secrets.BARK_SOUND }}
-          DD_BOT_TOKEN: ${{ secrets.DD_BOT_TOKEN }}
-          DD_BOT_SECRET: ${{ secrets.DD_BOT_SECRET }}
-          IGOT_PUSH_KEY: ${{ secrets.IGOT_PUSH_KEY }}
