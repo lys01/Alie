@@ -25,6 +25,6 @@ jobs:
         if: env.PAT
         with:
           source_repo: "https://bitbucket.org/jd-study/jd_scripts.git"
-          source_branch: "maste"
+          source_branch: "master"
           destination_branch: "jd_scripts"
           github_token: ${{ github.event.client_payload.PAT || secrets.PAT }}
