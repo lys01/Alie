@@ -43,5 +43,6 @@ jobs:
           JD_USER_AGENT: ${{ secrets.JD_USER_AGENT }}
           JD_DEBUG: ${{ secrets.JD_DEBUG }}
           PASTURE_EXCHANGE_KEYWORD: ${{ '1京豆' }}
+          PASTURE_AUTOLEVELUP: ${{ false }}
 
 
