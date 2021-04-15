@@ -1,5 +1,5 @@
 # File: .github/workflows/repo-sync.yml
-name: repo-sync
+name: shuye
 on:
   schedule:
     - cron: '0 15 * * *'
