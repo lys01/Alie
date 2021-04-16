@@ -1,5 +1,5 @@
 # File: .github/workflows/repo-sync.yml
-name: Shylocks
+name: jd_study_Shylocks
 on:
   schedule:
     - cron: '0 14 * * *'
