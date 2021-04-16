@@ -1,5 +1,5 @@
 # File: .github/workflows/repo-sync.yml
-name: lxk0301
+name: sensi-ribbed
 on:
   schedule:
     - cron: '20 15 * * *'
@@ -7,7 +7,7 @@ on:
   watch:
     types: started
   repository_dispatch:
-    types: lxk0301
+    types: sensi-ribbed
 jobs:
   repo-sync:
     env:
@@ -26,5 +26,5 @@ jobs:
         with:
           source_repo: "https://github.com/sensi-ribbed/Secretly.git"
           source_branch: "master"
-          destination_branch: "lxk0301"
+          destination_branch: "sensi-ribbed"
           github_token: ${{ github.event.client_payload.PAT || secrets.PAT }}
