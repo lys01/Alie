@@ -1,5 +1,5 @@
 # File: .github/workflows/repo-sync.yml
-name: JD-VidocqH
+name: YouYoustar
 on:
   schedule:
     - cron: '3 15 * * *'
@@ -7,7 +7,7 @@ on:
   watch:
     types: started
   repository_dispatch:
-    types: VidocqH
+    types: YouYoustar
 jobs:
   repo-sync:
     env:
@@ -24,7 +24,7 @@ jobs:
         uses: repo-sync/github-sync@v2
         if: env.PAT
         with:
-          source_repo: "https://github.com/VidocqH/jd_scripts.git"
+          source_repo: "https://github.com/YouYoustar/Low_key.git"
           source_branch: "master"
-          destination_branch: "JD-VidocqH"
+          destination_branch: "YouYoustar"
           github_token: ${{ github.event.client_payload.PAT || secrets.PAT }}
