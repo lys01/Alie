@@ -3,7 +3,7 @@ name: lxk0301_live_redrain-整点京豆雨
 on:
   workflow_dispatch:
   schedule:
-    - cron: '5 * * * *'
+    - cron: '35 * * * *'
   watch:
     types: started
   repository_dispatch:
