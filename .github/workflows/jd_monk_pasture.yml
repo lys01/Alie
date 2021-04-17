@@ -44,5 +44,6 @@ jobs:
           JD_DEBUG: ${{ secrets.JD_DEBUG }}
           PASTURE_EXCHANGE_KEYWORD: ${{ '1京豆' }}
           PASTURE_AUTOLEVELUP: ${{ false }}
+          PUSH_KEY: ${{ secrets.PUSH_KEY }}
 
 
