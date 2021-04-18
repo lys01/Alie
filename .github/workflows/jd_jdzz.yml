@@ -6,7 +6,7 @@ name: jd_jdzz-京东赚赚
 on:
   workflow_dispatch:
   schedule:
-    - cron: '40 2,15,16,17 * * *'
+    - cron: '40 2,8,15,16,17,23 * * *'
   watch:
     types: started
   repository_dispatch:
