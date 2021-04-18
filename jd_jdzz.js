@@ -24,7 +24,7 @@ const $ = new Env('京东赚赚');
 const notify = $.isNode() ? require('./sendNotify') : '';
 //Node.js用户请在jdCookie.js处填写京东ck;
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
-let helpAuthor=false; // 帮助作者
+let helpAuthor=true; // 帮助作者
 const randomCount = $.isNode() ? 20 : 5;
 let jdNotify = true; // 是否关闭通知，false打开通知推送，true关闭通知推送
 //IOS等用户直接用NobyDa的jd cookie
@@ -48,8 +48,8 @@ let nowTimes = new Date(new Date().getTime() + new Date().getTimezoneOffset() * 
   $.tuanList = [];
   $.authorTuanList = [];
   await requireConfig();
-  // if (helpAuthor) await getAuthorShareCode('https://gitee.com/shylocks/updateTeam/raw/main/jd_zz.json');
-  // if (helpAuthor) await getAuthorShareCode('https://cdn.jsdelivr.net/gh/gitupdate/updateTeam@master/shareCodes/jd_zz.json');
+   if (helpAuthor) await getAuthorShareCode('https://gitee.com/shylocks/updateTeam/raw/main/jd_zz.json');
+   if (helpAuthor) await getAuthorShareCode('https://cdn.jsdelivr.net/gh/gitupdate/updateTeam@master/shareCodes/jd_zz.json');
   if (!cookiesArr[0]) {
     $.msg($.name, '【提示】请先获取京东账号一cookie\n直接使用NobyDa的京东签到获取', 'https://bean.m.jd.com/bean/signIndex.action', {"open-url": "https://bean.m.jd.com/bean/signIndex.action"});
     return;
@@ -96,14 +96,14 @@ let nowTimes = new Date(new Date().getTime() + new Date().getTimezoneOffset() * 
           if(!$.canHelp) break
         }
       }
-      /*if ($.canHelp) {
+      if ($.canHelp) {
         console.log(`开始账号内部互助 赚京豆-瓜分京豆 活动，如有剩余则给作者lxk0301助力`)
         for (let j = 0; j < $.authorTuanList.length; ++j) {
           console.log(`账号 ${$.UserName} 开始给作者lxk0301 ${$.authorTuanList[j]['assistedPinEncrypted']}助力`)
           await helpFriendTuan($.authorTuanList[j])
           if(!$.canHelp) break
         }
-      }*/
+      }
     }
   }
 })()
@@ -433,8 +433,8 @@ function shareCodesFormat() {
       const tempIndex = $.index > inviteCodes.length ? (inviteCodes.length - 1) : ($.index - 1);
       $.newShareCodes = inviteCodes[tempIndex].split('@');
     }
-    // const readShareCodeRes = await readShareCode();
-    const readShareCodeRes = null;
+    const readShareCodeRes = await readShareCode();
+    //const readShareCodeRes = null;
     if (readShareCodeRes && readShareCodeRes.code === 200) {
       $.newShareCodes = [...new Set([...$.newShareCodes, ...(readShareCodeRes.data || [])])];
     }
