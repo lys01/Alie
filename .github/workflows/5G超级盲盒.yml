@@ -43,7 +43,8 @@ jobs:
             python3 wait.py 23:59:59.990
       - name: '5g超级盲盒'
         run: |
-          node jd_mohe.js 
+          node jd_mohe.js
+          node z_super5g.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           JD_USER_AGENT: ${{ secrets.JD_USER_AGENT }}
