@@ -249,7 +249,7 @@ function getUserInfo() {
           if (safeGet(data)) {
             data = JSON.parse(data);
             if (data.data) {
-              console.log(`用户【${data.data.nickname}】信息获取成功`)
+              console.log(`用户信息获取成功`)
               $.userId = data.data.id
               $.pinImg = data.data.yunMidImageUrl
               $.nick = data.data.nickname
