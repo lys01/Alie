@@ -6,7 +6,7 @@ name: jd_syj-赚京豆脚本
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 ,4,8,15,16,23 * * *'
+    - cron: '35 8,15,16,23 * * *'
   repository_dispatch:
     types: 赚京豆脚本
 jobs:
@@ -31,6 +31,13 @@ jobs:
       - name: npm install
         run: |
           npm install
+      - name: Set up Python 3.7
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.7
+      - name: '等待'
+        run: |
+             python3 wait.py 23:59:59.990
       - name: '赚京豆脚本'
         run: |
           node jd_syj.js
