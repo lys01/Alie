@@ -24,7 +24,8 @@ const notify = $.isNode() ? require('./sendNotify') : '';
 const jdCookieNode = $.isNode() ? require("./jdCookie.js") : "";
 $.showLog = $.getdata("cfd_showLog") ? $.getdata("cfd_showLog") === "false" : false;
 $.notifyTime = $.getdata("cfd_notifyTime");
-$.result = [];$.shareCodes = [];
+$.result = [];$.shareCodes = ['665E4671ABC9BD853D0FD1812FBFDB0AEA041EE5DBB156545BCBA5A43DE571E9@A96A2230DE0204482F19C761E3648AB4C1279942E04141B4C616867D098C318C',
+                             '665E4671ABC9BD853D0FD1812FBFDB0AEA041EE5DBB156545BCBA5A43DE571E9&A96A2230DE0204482F19C761E3648AB4C1279942E04141B4C616867D098C318C'];
 let cookiesArr = [], cookie = '', token;
 
 
