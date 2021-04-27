@@ -35,7 +35,8 @@ let jdNotify = true;//是否关闭通知，false打开通知推送，true关闭�
 const randomCount = $.isNode() ? 20 : 5;
 //IOS等用户直接用NobyDa的jd cookie
 let cookiesArr = [], cookie = '', message;
-$.tuanList = [];
+$.tuanList = [{"activityIdEncrypted":"RL5bZfTiAF8=\n","assistStartRecordId":847556,"assistedPinEncrypted":"315JlVa2nyKe6aHk1CpoPkbCOLQDCrQB\n","channel":"FISSION_BEAN"},
+              {"activityIdEncrypted":"RL5bZfTiAF8=\n","assistStartRecordId":822497,"assistedPinEncrypted":"hCgTvCHs6F2tcN3AUqXVXkbCOLQDCrQB\n","channel":"FISSION_BEAN"}];
 $.authorTuanList = [];
 if ($.isNode()) {
   Object.keys(jdCookieNode).forEach((item) => {
