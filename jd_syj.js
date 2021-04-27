@@ -53,9 +53,9 @@ const JD_API_HOST = 'https://api.m.jd.com/api';
     $.msg($.name, '【提示】请先获取京东账号一cookie\n直接使用NobyDa的京东签到获取', 'https://bean.m.jd.com/bean/signIndex.action', {"open-url": "https://bean.m.jd.com/bean/signIndex.action"});
     return;
   }
-  await getAuthorShareCode('http://qr6pzoy01.hn-bkt.clouddn.com/jd_zz.json');
-  await getAuthorShareCode('https://raw.githubusercontent.com/gitupdate/updateTeam/master/shareCodes/jd_zz.json');
-  await getRandomCode();
+ // await getAuthorShareCode('http://qr6pzoy01.hn-bkt.clouddn.com/jd_zz.json');
+ // await getAuthorShareCode('https://raw.githubusercontent.com/gitupdate/updateTeam/master/shareCodes/jd_zz.json');
+ // await getRandomCode();
   for (let i = 0; i < cookiesArr.length; i++) {
     if (cookiesArr[i]) {
       cookie = cookiesArr[i];
@@ -83,7 +83,7 @@ const JD_API_HOST = 'https://api.m.jd.com/api';
     if (cookiesArr[i]) {
       cookie = cookiesArr[i];
       $.UserName = decodeURIComponent(cookie.match(/pt_pin=([^; ]+)(?=;?)/) && cookie.match(/pt_pin=([^; ]+)(?=;?)/)[1])
-      if ($.canHelp && (cookiesArr.length > $.assistNum)) {
+      if ($.canHelp) {
         if ($.tuanList.length) console.log(`开始账号内部互助 赚京豆-瓜分京豆 活动，优先内部账号互助`)
         for (let j = 0; j < $.tuanList.length; ++j) {
           console.log(`账号 ${$.UserName} 开始给 【${$.tuanList[j]['assistedPinEncrypted']}】助力`)
@@ -92,7 +92,7 @@ const JD_API_HOST = 'https://api.m.jd.com/api';
           await $.wait(200)
         }
       }
-      if ($.canHelp) {
+     /* if ($.canHelp) {
         $.authorTuanList = [...$.authorTuanList, ...($.body1 || [])];
         if ($.authorTuanList.length) console.log(`开始账号内部互助 赚京豆-瓜分京豆 活动，如有剩余则给作者lxk0301和随机团助力`)
         for (let j = 0; j < $.authorTuanList.length; ++j) {
@@ -101,7 +101,7 @@ const JD_API_HOST = 'https://api.m.jd.com/api';
           if(!$.canHelp) break
           await $.wait(200)
         }
-      }
+      }*/
     }
   }
 })()
@@ -553,6 +553,7 @@ async function distributeBeanActivity() {
     }
     if ($.tuan && $.tuan.hasOwnProperty('assistedPinEncrypted') && $.assistStatus !== 3) {
       $.tuanList.push($.tuan);
+      //console.log(`\n【京东账号${$.index}（${$.nickName || $.UserName}）的赚京豆开团好友互助码: \n${JSON.stringify($.tuan)}\n`)
       $.http.post({
         url: `https://code.c-hiang.cn/autocommit/zuan/insert`,
         headers: { "Content-Type": "application/json" },
