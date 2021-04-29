@@ -6,7 +6,7 @@ name: jd_shop_lottery-店铺大转盘
 on:
   workflow_dispatch:
   schedule:
-    - cron: '1 2,15,16 * * *'
+    - cron: '50 2,14,16 * * *'
   repository_dispatch:
     types: 店铺大转盘
 jobs:
