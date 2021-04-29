@@ -6,7 +6,7 @@ name: jd_joy_run-宠汪汪助力
 on:
   workflow_dispatch:
   schedule:
-    - cron: '59 16,6,11 * * *'
+    - cron: '0 2 * * *'
   watch:
     types: started
   repository_dispatch:
