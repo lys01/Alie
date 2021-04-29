@@ -1,5 +1,5 @@
 # File: .github/workflows/repo-sync.yml
-name: YouYoustar(master)
+name: YouYoustar
 on:
   schedule:
     - cron: '3 15 * * *'
