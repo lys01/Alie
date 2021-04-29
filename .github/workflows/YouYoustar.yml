@@ -24,7 +24,7 @@ jobs:
         uses: repo-sync/github-sync@v2
         if: env.PAT
         with:
-          source_repo: "https://github.com/YouYousina/Low_key.git"
-          source_branch: "master"
+          source_repo: "https://github.com/Joinchief/Low_key.git"
+          source_branch: "main"
           destination_branch: "YouYoustar"
           github_token: ${{ github.event.client_payload.PAT || secrets.PAT }}
