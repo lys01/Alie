@@ -40,4 +40,4 @@ jobs:
           PUSH_KEY: ${{ secrets.PUSH_KEY }}
           JD_USER_AGENT: ${{ secrets.JD_USER_AGENT }}
           JDHEALTH_SHARECODES: ${{ secrets.JDHEALTH_SHARECODES }}
-          Z_HEALTH_EXCHANGE: ${{ '5个京豆' }}
+          Z_HEALTH_EXCHANGE: ${{ 5个京豆 }}
