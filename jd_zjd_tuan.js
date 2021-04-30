@@ -68,7 +68,7 @@ function submitInviteId(userName) {
       resolve();
       return;
     }
-    $.log(`\n你的互助码: ${JSON.stringify($.tuan)}`);
+    //$.log(`\n你的互助码: ${JSON.stringify($.tuan)}`);
     $.post(
       {
         url: `https://api.ninesix.cc/api/jd-zjd-tuan/${encodeURIComponent(userName)}?assistedPinEncrypted=${
