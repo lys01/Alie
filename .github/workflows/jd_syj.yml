@@ -6,7 +6,7 @@ name: jd_syj-赚京豆脚本
 on:
   workflow_dispatch:
   schedule:
-    - cron: '35,55 8,15,16,23 * * *'
+    - cron: '40 8,15,23 * * *'
   repository_dispatch:
     types: 赚京豆脚本
 jobs:
@@ -41,6 +41,7 @@ jobs:
       - name: '赚京豆脚本'
         run: |
           node jd_syj.js
+          node jd_zjd_tuan.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           JD_USER_AGENT: ${{ secrets.JD_USER_AGENT }}
