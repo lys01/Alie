@@ -33,9 +33,11 @@ jobs:
       - name: '运行 【东东健康社区】'
         run: |
           node jd_health.js
+          node z_health_community.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           JD_DEBUG: ${{ secrets.JD_DEBUG }}
           PUSH_KEY: ${{ secrets.PUSH_KEY }}
           JD_USER_AGENT: ${{ secrets.JD_USER_AGENT }}
           JDHEALTH_SHARECODES: ${{ secrets.JDHEALTH_SHARECODES }}
+          Z_HEALTH_EXCHANGE: ${{ secrets.Z_HEALTH_EXCHANGE }}
