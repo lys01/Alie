@@ -46,7 +46,7 @@ if ($.isNode()) {
       $.nickName = '';
       message = '';
       await TotalBean();
-      console.log(`\n******开始【京东账号${$.index}】${$.UserName}*********\n`);
+      console.log(`\n******开始【京东账号${$.index}】${$.nickName.substring(0, 5).concat('***')}*********\n`);
       if (!$.isLogin) {
         $.msg($.name, `【提示】cookie已失效`, `京东账号${$.index} ${$.nickName || $.UserName}\n请重新登录获取\nhttps://bean.m.jd.com/bean/signIndex.action`, {"open-url": "https://bean.m.jd.com/bean/signIndex.action"});
 
@@ -374,7 +374,7 @@ function queryAvailableSubsidyAmount() {
           data = JSON.parse(data);
           if (data.resultCode === 0) {
             if (data.resultData.code === '000') {
-              console.log(`获取当前总金贴成功\n\n京东账号${$.index} ${$.nickName || $.UserName} 当前总金贴：${data.resultData.data}元`)
+              console.log(`获取当前总金贴成功\n\n京东账号${$.index} ${$.nickName.substring(0, 5).concat('***')} 当前总金贴：${data.resultData.data}元`)
             } else {
               console.log('获取当前总金贴失败', data.resultData.msg)
             }
@@ -454,8 +454,10 @@ function TotalBean() {
               $.isLogin = false; //cookie过期
               return;
             }
-            if (data['retcode'] === "0" && data.data && data.data.hasOwnProperty("userInfo")) {
-              $.nickName = data.data.userInfo.baseInfo.nickname;
+             if (data['retcode'] === 0) {
+              $.nickName = (data['base'] && data['base'].nickname) || $.UserName;
+            } else {
+              $.nickName = $.UserName
             }
           } else {
             $.log('京东服务器返回空数据');
