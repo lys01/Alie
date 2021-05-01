@@ -6,7 +6,7 @@ name: jd_jin_tie-领金贴
 on:
   workflow_dispatch:
   schedule:
-    - cron: '50 15 * * *'
+    - cron: '10 16 * * *'
   repository_dispatch:
     types: jd_jin_tie
 jobs:
@@ -34,6 +34,7 @@ jobs:
       - name: '领金贴'
         run: |
           node jd_jin_tie.js
+          node jd_jintie_wx.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           JD_USER_AGENT: ${{ secrets.JD_USER_AGENT }}
