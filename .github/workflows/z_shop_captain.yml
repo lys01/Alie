@@ -38,6 +38,6 @@ jobs:
         run: |
           node z_shop_captain
         env:
-          JD_COOKIE: ${{ secrets.JD_COOKIE1 }}
+          JD_COOKIE: ${{ secrets.JD_COOKIE }}
           JD_DEBUG: ${{ secrets.JD_DEBUG }}
           PUSH_KEY: ${{ secrets.PUSH_KEY }}
