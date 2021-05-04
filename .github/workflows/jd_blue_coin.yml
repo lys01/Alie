@@ -42,7 +42,7 @@ jobs:
               python3 wait.py 23:59:59.990
       - name: '开始换豆'
         run: |
-          node jd_blueCoin.js
+          #node jd_blueCoin.js
           node jd_blueCoin20.js
          
           
