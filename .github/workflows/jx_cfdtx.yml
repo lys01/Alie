@@ -42,10 +42,14 @@ jobs:
         run: |
           sleep 1
           node jx_cfdtx.js
+          sleep 3
+          node jx_cfdtx.js
+          sleep 3
+          node jx_cfdtx.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE_CFD }}
           #JD_USER_AGENT: ${{ secrets.JD_USER_AGENT_CFD }}
-          jx_tokens: ${{ secrets.jx_tokens }}
+          #jx_tokens: ${{ secrets.jx_tokens }}
           JD_DEBUG: ${{ secrets.JD_DEBUG }}
           PUSH_KEY: ${{ secrets.PUSH_KEY }}
           QQ_SKEY: ${{ secrets.QQ_SKEY }}
