@@ -43,8 +43,8 @@ jobs:
           sleep 1
           node jx_cfdtx.js
         env:
-          JD_COOKIE: ${{ secrets.JD_COOKIE1 }}
-          JD_USER_AGENT: ${{ secrets.JD_USER_AGENT1 }}
+          JD_COOKIE: ${{ secrets.JD_COOKIE_CFD }}
+          JD_USER_AGENT: ${{ secrets.JD_USER_AGENT_CFD }}
           JD_DEBUG: ${{ secrets.JD_DEBUG }}
           PUSH_KEY: ${{ secrets.PUSH_KEY }}
           QQ_SKEY: ${{ secrets.QQ_SKEY }}
