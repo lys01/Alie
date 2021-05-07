@@ -30,16 +30,17 @@ let cookiesArr = [], cookie = '', jdFruitShareArr = [], isBox = false, notify, n
 //下面给出两个账号的填写示例（iOS只支持2个京东账号）
 let shareCodes = [ // 这个列表填入你要助力的好友的shareCode
    //账号一的好友shareCode,不同好友的shareCode中间用@符号隔开
-  '6cdc57f446874f019dc16e2b7a78ea41@13a085ae30a34ee9b946e07901edc6fa@beaecc3e07b94311b9270799205a7551',
+  '50cd283249db46528b6858e0e71ce179@6cdc57f446874f019dc16e2b7a78ea41@d3a4456ca8bb4eecad39f8d527b615b3@13a085ae30a34ee9b946e07901edc6fa@beaecc3e07b94311b9270799205a7551',
   //账号二的好友shareCode,不同好友的shareCode中间用@符号隔开
-  '50cd283249db46528b6858e0e71ce179@13a085ae30a34ee9b946e07901edc6fa@beaecc3e07b94311b9270799205a7551',
-  '50cd283249db46528b6858e0e71ce179@6cdc57f446874f019dc16e2b7a78ea41@beaecc3e07b94311b9270799205a7551',
-  '50cd283249db46528b6858e0e71ce179@6cdc57f446874f019dc16e2b7a78ea41@13a085ae30a34ee9b946e07901edc6fa'
+  '50cd283249db46528b6858e0e71ce179@6cdc57f446874f019dc16e2b7a78ea41@d3a4456ca8bb4eecad39f8d527b615b3@13a085ae30a34ee9b946e07901edc6fa@beaecc3e07b94311b9270799205a7551',
+  '50cd283249db46528b6858e0e71ce179@6cdc57f446874f019dc16e2b7a78ea41@d3a4456ca8bb4eecad39f8d527b615b3@13a085ae30a34ee9b946e07901edc6fa@beaecc3e07b94311b9270799205a7551',
+  '50cd283249db46528b6858e0e71ce179@6cdc57f446874f019dc16e2b7a78ea41@d3a4456ca8bb4eecad39f8d527b615b3@13a085ae30a34ee9b946e07901edc6fa@beaecc3e07b94311b9270799205a7551',
+  '50cd283249db46528b6858e0e71ce179@6cdc57f446874f019dc16e2b7a78ea41@d3a4456ca8bb4eecad39f8d527b615b3@13a085ae30a34ee9b946e07901edc6fa@beaecc3e07b94311b9270799205a7551'
 ]
 let message = '', subTitle = '', option = {}, isFruitFinished = false;
 const retainWater = 100;//保留水滴大于多少g,默认100g;
-let jdNotify = true;//是否关闭通知，false打开通知推送，true关闭通知推送
-let jdFruitBeanCard = true;//农场使用水滴换豆卡(如果出现限时活动时100g水换20豆,此时比浇水划算,推荐换豆),true表示换豆(不浇水),false表示不换豆(继续浇水),脚本默认是浇水
+let jdNotify = false;//是否关闭通知，false打开通知推送，true关闭通知推送
+let jdFruitBeanCard = false;//农场使用水滴换豆卡(如果出现限时活动时100g水换20豆,此时比浇水划算,推荐换豆),true表示换豆(不浇水),false表示不换豆(继续浇水),脚本默认是浇水
 let randomCount = $.isNode() ? 20 : 5;
 const JD_API_HOST = 'https://api.m.jd.com/client.action';
 const urlSchema = `openjd://virtual?params=%7B%20%22category%22:%20%22jump%22,%20%22des%22:%20%22m%22,%20%22url%22:%20%22https://h5.m.jd.com/babelDiy/Zeus/3KSjXqQabiTuD1cJ28QskrpWoBKT/index.html%22%20%7D`;
@@ -897,7 +898,7 @@ async function receiveFriendInvite() {
       continue
     }
     await inviteFriend(code);
-    // console.log(`接收邀请成为好友结果:${JSON.stringify($.inviteFriendRes.helpResult)}`)
+    // console.log(`接收邀请成为好友结果:${JSON.stringify($.inviteFriendRes)}`)
     if ($.inviteFriendRes && $.inviteFriendRes.helpResult && $.inviteFriendRes.helpResult.code === '0') {
       console.log(`接收邀请成为好友结果成功,您已成为${$.inviteFriendRes.helpResult.masterUserInfo.nickName}的好友`)
     } else if ($.inviteFriendRes.helpResult.code === '17') {
@@ -1253,7 +1254,7 @@ function timeFormat(time) {
 }
 function readShareCode() {
   return new Promise(async resolve => {
-    $.get({url: `http://jd.turinglabs.net/api/v2/jd/farm/read/${randomCount}/`, timeout: 10000,}, (err, resp, data) => {
+    $.get({url: `http://share.turinglabs.net/api/v3/farm/query/${randomCount}/`, timeout: 10000,}, (err, resp, data) => {
       try {
         if (err) {
           console.log(`${JSON.stringify(err)}`)
@@ -1263,7 +1264,7 @@ function readShareCode() {
             console.log(`随机取个${randomCount}码放到您固定的互助码后面(不影响已有固定互助)`)
             data = JSON.parse(data);
           }
-        }
+        }p
       } catch (e) {
         $.logErr(e, resp)
       } finally {
@@ -1285,8 +1286,7 @@ function shareCodesFormat() {
       const tempIndex = $.index > shareCodes.length ? (shareCodes.length - 1) : ($.index - 1);
       newShareCodes = shareCodes[tempIndex].split('@');
     }
-    //const readShareCodeRes = await readShareCode();
-    const readShareCodeRes = null;
+    const readShareCodeRes = await readShareCode();
     if (readShareCodeRes && readShareCodeRes.code === 200) {
       // newShareCodes = newShareCodes.concat(readShareCodeRes.data || []);
       newShareCodes = [...new Set([...newShareCodes, ...(readShareCodeRes.data || [])])];
@@ -1323,7 +1323,7 @@ function requireConfig() {
       })
     } else {
       if ($.getdata('jd_fruit_inviter')) $.shareCodesArr = $.getdata('jd_fruit_inviter').split('\n').filter(item => !!item);
-      console.log(`\nBoxJs设置的${$.name}好友邀请码:${$.getdata('jd_fruit_inviter')}\n`);
+      console.log(`\nBoxJs设置的${$.name}好友邀请码:${$.getdata('jd_fruit_inviter') ? $.getdata('jd_fruit_inviter') : '暂无'}\n`);
     }
     // console.log(`$.shareCodesArr::${JSON.stringify($.shareCodesArr)}`)
     // console.log(`jdFruitShareArr账号长度::${$.shareCodesArr.length}`)

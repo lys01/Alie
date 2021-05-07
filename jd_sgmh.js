@@ -29,8 +29,11 @@ const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 let appId = '1EFRXxg' , homeDataFunPrefix = 'interact_template', collectScoreFunPrefix = 'harmony', message = ''
 let lotteryResultFunPrefix = homeDataFunPrefix, browseTime = 6
 const inviteCodes = [
-  'T0225KkcR0pI9lDVdRnznKYKJwCjVQmoaT5kRrbA@T0225KkcRRsY8lLfch-hwvIJIgCjVQmoaT5kRrbA',
-  'T0225KkcR0pI9lDVdRnznKYKJwCjVQmoaT5kRrbA@T0225KkcRRsY8lLfch-hwvIJIgCjVQmoaT5kRrbA'
+  'T0225KkcR0pI9lDVdRnznKYKJwCjVQmoaT5kRrbA@T0225KkcRRsY8lLfch-hwvIJIgCjVQmoaT5kRrbA@T015v_t2QBkY_VDVT0cCjVQmoaT5kRrbA@T0225KkcRBxL8lLUJRr8xf9bdACjVQmoaT5kRrbA@T0205KkcOVRcqwOXfWCU14B0CjVQmoaT5kRrbA',
+  'T0225KkcR0pI9lDVdRnznKYKJwCjVQmoaT5kRrbA@T0225KkcRRsY8lLfch-hwvIJIgCjVQmoaT5kRrbA@T015v_t2QBkY_VDVT0cCjVQmoaT5kRrbA@T0225KkcRBxL8lLUJRr8xf9bdACjVQmoaT5kRrbA@T0205KkcOVRcqwOXfWCU14B0CjVQmoaT5kRrbA',
+  'T0225KkcR0pI9lDVdRnznKYKJwCjVQmoaT5kRrbA@T0225KkcRRsY8lLfch-hwvIJIgCjVQmoaT5kRrbA@T015v_t2QBkY_VDVT0cCjVQmoaT5kRrbA@T0225KkcRBxL8lLUJRr8xf9bdACjVQmoaT5kRrbA@T0205KkcOVRcqwOXfWCU14B0CjVQmoaT5kRrbA',
+  'T0225KkcR0pI9lDVdRnznKYKJwCjVQmoaT5kRrbA@T0225KkcRRsY8lLfch-hwvIJIgCjVQmoaT5kRrbA@T015v_t2QBkY_VDVT0cCjVQmoaT5kRrbA@T0225KkcRBxL8lLUJRr8xf9bdACjVQmoaT5kRrbA@T0205KkcOVRcqwOXfWCU14B0CjVQmoaT5kRrbA',
+  'T0225KkcR0pI9lDVdRnznKYKJwCjVQmoaT5kRrbA@T0225KkcRRsY8lLfch-hwvIJIgCjVQmoaT5kRrbA@T015v_t2QBkY_VDVT0cCjVQmoaT5kRrbA@T0225KkcRBxL8lLUJRr8xf9bdACjVQmoaT5kRrbA@T0205KkcOVRcqwOXfWCU14B0CjVQmoaT5kRrbA'
 ];
 const randomCount = $.isNode() ? 20 : 5;
 const notify = $.isNode() ? require('./sendNotify') : '';
@@ -298,11 +301,11 @@ function shareCodesFormat() {
       const tempIndex = $.index > inviteCodes.length ? (inviteCodes.length - 1) : ($.index - 1);
       $.newShareCodes = inviteCodes[tempIndex].split('@');
     }
-    /*const readShareCodeRes = await readShareCode();
+    const readShareCodeRes = await readShareCode();
     // console.log(readShareCodeRes)
     if (readShareCodeRes && readShareCodeRes.code === 200) {
       $.newShareCodes = [...new Set([...$.newShareCodes, ...(readShareCodeRes.data || [])])];
-    }*/
+    }
     console.log(`第${$.index}个京东账号将要助力的好友${JSON.stringify($.newShareCodes)}`)
     resolve();
   })
@@ -312,7 +315,7 @@ function readShareCode() {
   console.log(`开始`)
   return new Promise(async resolve => {
     $.get({
-      url: `http://jd.turinglabs.net/api/v2/jd/sgmh/read/${randomCount}/`,
+      url: `http://share.turinglabs.net/api/v3/sgmh/query/${randomCount}/`,
       'timeout': 10000
     }, (err, resp, data) => {
       try {

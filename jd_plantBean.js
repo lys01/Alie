@@ -35,9 +35,12 @@ const JD_API_HOST = 'https://api.m.jd.com/client.action';
 //下面给出两个账号的填写示例（iOS只支持2个京东账号）
 let shareCodes = [ // IOS本地脚本用户这个列表填入你要助力的好友的shareCode
                    //账号一的好友shareCode,不同好友的shareCode中间用@符号隔开
-  '4npkonnsy7xi2ouj27jjt2ojrnpxtfou4dwquba@mlrdw3aw26j3xynofsgbd276hgnu5dt3kdie5hq',
+  '4npkonnsy7xi2ouj27jjt2ojrnpxtfou4dwquba@mlrdw3aw26j3xynofsgbd276hgnu5dt3kdie5hq@3ov2ynviom3aoeqwncbjlp2pmu@e7lhibzb3zek3rv3hoi3tmdis23k3ao5axcrkxy@qmnmamd3ukiwrfag6acw3wnuh6kqmrdyqij7ccq',
   //账号二的好友shareCode,不同好友的shareCode中间用@符号隔开
-  '4npkonnsy7xi2ouj27jjt2ojrnpxtfou4dwquba@mlrdw3aw26j3xynofsgbd276hgnu5dt3kdie5hq',
+  '4npkonnsy7xi2ouj27jjt2ojrnpxtfou4dwquba@mlrdw3aw26j3xynofsgbd276hgnu5dt3kdie5hq@3ov2ynviom3aoeqwncbjlp2pmu@e7lhibzb3zek3rv3hoi3tmdis23k3ao5axcrkxy@qmnmamd3ukiwrfag6acw3wnuh6kqmrdyqij7ccq',
+  '4npkonnsy7xi2ouj27jjt2ojrnpxtfou4dwquba@mlrdw3aw26j3xynofsgbd276hgnu5dt3kdie5hq@3ov2ynviom3aoeqwncbjlp2pmu@e7lhibzb3zek3rv3hoi3tmdis23k3ao5axcrkxy@qmnmamd3ukiwrfag6acw3wnuh6kqmrdyqij7ccq',
+  '4npkonnsy7xi2ouj27jjt2ojrnpxtfou4dwquba@mlrdw3aw26j3xynofsgbd276hgnu5dt3kdie5hq@3ov2ynviom3aoeqwncbjlp2pmu@e7lhibzb3zek3rv3hoi3tmdis23k3ao5axcrkxy@qmnmamd3ukiwrfag6acw3wnuh6kqmrdyqij7ccq',
+  '4npkonnsy7xi2ouj27jjt2ojrnpxtfou4dwquba@mlrdw3aw26j3xynofsgbd276hgnu5dt3kdie5hq@3ov2ynviom3aoeqwncbjlp2pmu@e7lhibzb3zek3rv3hoi3tmdis23k3ao5axcrkxy@qmnmamd3ukiwrfag6acw3wnuh6kqmrdyqij7ccq',
 ]
 let allMessage = ``;
 let currentRoundId = null;//本期活动id
@@ -531,7 +534,7 @@ async function plantBeanIndex() {
 }
 function readShareCode() {
   return new Promise(async resolve => {
-    $.get({url: `http://jd.turinglabs.net/api/v2/jd/bean/read/${randomCount}/`, timeout: 10000}, (err, resp, data) => {
+    $.get({url: `http://share.turinglabs.net/api/v3/bean/query/${randomCount}/`, timeout: 10000}, (err, resp, data) => {
       try {
         if (err) {
           console.log(`${JSON.stringify(err)}`)
@@ -564,8 +567,7 @@ function shareCodesFormat() {
       const tempIndex = $.index > shareCodes.length ? (shareCodes.length - 1) : ($.index - 1);
       newShareCodes = shareCodes[tempIndex].split('@');
     }
-    // const readShareCodeRes = await readShareCode();
-    const readShareCodeRes = null;
+    const readShareCodeRes = await readShareCode();
     if (readShareCodeRes && readShareCodeRes.code === 200) {
       newShareCodes = [...new Set([...newShareCodes, ...(readShareCodeRes.data || [])])];
     }
