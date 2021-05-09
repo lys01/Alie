@@ -7,7 +7,7 @@
 // {"farm_jstoken":"749a90f871adsfads8ffda7bf3b1576760","timestamp":"1610165423873","phoneid":"42c7e3dadfadsfdsaac-18f0e4f4a0cf"}
 let JxncTokens = [ 
   '{"farm_jstoken":"d657699e5297955fc328e033f62c9410","timestamp":"1620294073686","phoneid":"4e0314ac734f6d32"}',
-  '{"farm_jstoken": "47dfb368fdb085d0efa58ac2c95b4409", "phoneid": "4e0314ac734f6d32", "timestamp": "1620530487112"}'
+  '{"farm_jstoken": "47dfb368fdb085d0efa58ac2c95b4409","timestamp": "1620530487112","phoneid": "4e0314ac734f6d32"}'
 ]
 // 判断github action里面是否有京喜农场 token 
 if (process.env.JXNCTOKENS) {
