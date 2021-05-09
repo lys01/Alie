@@ -49,7 +49,8 @@ jobs:
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE_CFD }}
           #JD_USER_AGENT: ${{ secrets.JD_USER_AGENT_CFD }}
-          jx_tokens: ${{ secrets.JX_TOKENS }}
+          #jx_tokens: ${{ secrets.JX_TOKENS }}
+          JxncTokens: ${{ secrets.JxncTokens }}
           JD_DEBUG: ${{ secrets.JD_DEBUG }}
           PUSH_KEY: ${{ secrets.PUSH_KEY }}
           QQ_SKEY: ${{ secrets.QQ_SKEY }}
