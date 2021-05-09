@@ -9,7 +9,7 @@
  * @param text 通知头
  * @param desp 通知体
  * @param params 某些推送通知方式点击弹窗可跳转, 例：{ url: 'https://abc.com' }
- * @param author 作者仓库等信息  例：`本脚本免费使用 By：https://gitee.com/lxk0301/jd_docker`
+ * @param author 作者仓库等信息  例：`本脚本免费使用 By：lxk0301`
  * @returns {Promise<unknown>}
  */
 const querystring = require("querystring");
@@ -148,7 +148,7 @@ if (process.env.PUSH_PLUS_USER) {
  * @param text 通知头
  * @param desp 通知体
  * @param params 某些推送通知方式点击弹窗可跳转, 例：{ url: 'https://abc.com' }
- * @param author 作者仓库等信息  例：`本脚本免费使用 By：https://gitee.com/lxk0301/jd_docker`
+ * @param author 作者仓库等信息  例：`本脚本免费使用 By：lxk0301`
  * @returns {Promise<unknown>}
  */
 async function sendNotify(text, desp, params = {}, author = '\n\n本脚本免费使用 By：lxk0301') {
