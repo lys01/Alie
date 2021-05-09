@@ -34,7 +34,7 @@ jobs:
       - name: '定时0点'
         run: |
           python3 wait.py 23:59:59.990
-      - name: '急速版签到及红包'
+      - name: '急速版红包及签到'
         run: |
           node jd_speed_redpocke.js
           sleep 30
