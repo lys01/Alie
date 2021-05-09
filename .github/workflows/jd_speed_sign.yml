@@ -37,7 +37,7 @@ jobs:
       - name: '急速版签到及红包'
         run: |
           node jd_speed_redpocke.js
-          sleep 1m
+          sleep 30
           node jd_speed_sign.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
