@@ -22,6 +22,7 @@ $.currentCookie = '';
 $.tokenArr = [];
 $.currentToken = {};
 $.strPhoneID = '';
+$.strPgtimestamp ='';
 $.strPgUUNum = '';
 $.userName = '';
 
