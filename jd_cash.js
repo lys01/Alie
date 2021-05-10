@@ -29,7 +29,7 @@ let jdNotify = true;//是否关闭通知，false打开通知推送，true关闭�
 let cookiesArr = [], cookie = '', message;
 let helpAuthor = true;
 const randomCount = $.isNode() ? 20 : 5;
-let cash_exchange = true;//是否消耗2元红包兑换200京豆，默认是
+let cash_exchange = false;//是否消耗2元红包兑换200京豆，默认否
 const inviteCodes = [
   'eU9YaemzYfouo2uAnXYQgA@eU9YaO7gYfol9G7dmntC1g@eU9YFab3OKtmrBS1iARt@eU9Ya7jjZfgkpG3SwyIThQ',
   'eU9Ya7jjZfgkpG3SwyIThQ@eU9YaemzYfouo2uAnXYQgA@eU9YaO7gYfol9G7dmntC1g@eU9YFab3OKtmrBS1iARt',
@@ -455,7 +455,7 @@ function taskUrl(functionId, body = {}) {
   }
 }
 
-function getAuthorShareCode(url = "http://qr6pzoy01.hn-bkt.clouddn.com/jd_cash.json") {
+function getAuthorShareCode(url = "https://a.nz.lu/jd_cash.json") {
   return new Promise(resolve => {
     $.get({url, headers:{
         "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1 Edg/87.0.4280.88"
