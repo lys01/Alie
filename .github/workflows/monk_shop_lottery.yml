@@ -36,7 +36,7 @@ jobs:
       - name: '店铺大转盘'
         run: |
           node monk_shop_lottery.js
-     - name: '取消关注'
+      - name: '取消关注'
         run: |
           node jd_unsubscribe.js
         env:
