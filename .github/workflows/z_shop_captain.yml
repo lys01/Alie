@@ -36,7 +36,8 @@ jobs:
           npm install
       - name: '运行 【超级无线组队分京豆】'
         run: |
-          node z_shop_captain
+          node z_shop_captain.js
+          node jd_live_lottery_social.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           JD_DEBUG: ${{ secrets.JD_DEBUG }}
