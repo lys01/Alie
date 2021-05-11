@@ -41,8 +41,8 @@ if target_hour == 0:
 logging.warning(f'当前时间: {now_cn}, 目标时间: {target_time}')
 
 td = target_time - now_cn
-if td.seconds > 3600:
-	logging.error('时间差大于1小时，退出')
+if td.seconds > 2400:
+	logging.error('时间差大于40分钟，退出')
 	exit()
 logging.warning(f'需要沉睡：{td.seconds}秒')
 wait = td.seconds+math.floor(td.microseconds/1000)/1000
