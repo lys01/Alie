@@ -36,6 +36,7 @@ jobs:
           python3 wait.py 23:59:59.990
       - name: '急速版红包及签到'
         run: |
+          sleep 5
           node jd_speed_redpocke.js
           node jd_speed_sign.js
         env:
