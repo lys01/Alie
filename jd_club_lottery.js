@@ -97,11 +97,7 @@ const JD_API_HOST = 'https://api.m.jd.com/client.action';
       $.assigFirends = $.assigFirends.concat({
         "encryptAssignmentId": $.assigFirends[0] && $.assigFirends[0]['encryptAssignmentId'],
         "assignmentType": 2,
-        "itemId": "S5KkcAlpbtBaxXnKM7Z9_",
-      }, {
-        "encryptAssignmentId": $.assigFirends[0] && $.assigFirends[0]['encryptAssignmentId'],
-        "assignmentType": 2,
-        "itemId": "SaEzIlJOJLepV9qJV",
+        "itemId": "SZm_olqSxIOtH97BATGmKoWraLaw",
       })
       for (let item of $.assigFirends || []) {
         if (item['encryptAssignmentId'] && item['assignmentType'] && item['itemId']) {
@@ -1061,12 +1057,12 @@ function superbrand_getGift() {
                 $.jpeasList = result['jpeasList'];
                 if ($.jpeasList && $.jpeasList.length) {
                   for (let item of $.jpeasList) {
-                    console.log(`超级品牌日 抽奖 获得：${item['quantity']}${item['prizeName']}`);
-                    message += `【超级品牌日】获得：${item['quantity']}${item['prizeName']}\n`;
+                    console.log(`超级品牌日 抽奖 获得：${item['quantity']}京豆🐶`);
+                    message += `【超级品牌日】获得：${item['quantity']}京豆🐶\n`;
                     if ($.superShakeBeanNum === 0) {
                       allMessage += `京东账号${$.index}${$.nickName || $.UserName}\n【超级品牌日】获得：${item['quantity']}${item['prizeName']}\n`;
                     } else {
-                      allMessage += `【超级品牌日】获得：${item['quantity']}${item['prizeName']}\n`;
+                      allMessage += `【超级品牌日】获得：${item['quantity']}京豆🐶\n`;
                     }
                   }
                 }
