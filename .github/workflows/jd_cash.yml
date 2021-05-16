@@ -6,7 +6,7 @@ name: jd_cash-签到领现金
 on:
   workflow_dispatch:
   schedule:
-    - cron: '6 0-16/4 * * *'
+    - cron: '35 0,4,15 * * *'
   repository_dispatch:
     types: 签到领现金
 jobs:
@@ -33,6 +33,10 @@ jobs:
       - name: npm install
         run: |
           npm install
+      - name: Set up Python 3.7
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.7
       - name: '定时0点'
         run: |
           python3 wait.py 23:59:59.990
