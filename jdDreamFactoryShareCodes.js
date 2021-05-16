@@ -8,8 +8,13 @@
 // 同一个京东账号的好友互助码用@符号隔开,不同京东账号之间用&符号或者换行隔开,下面给一个示例
 // 如: 京东账号1的shareCode1@京东账号1的shareCode2&京东账号2的shareCode1@京东账号2的shareCode2
 let shareCodes = [
-  'V5LkjP4WRyjeCKR9VRwcRX0bBuTz7MEK0-E99EJ7u0k=@Bo-jnVs_m9uBvbRzraXcSA==@-OvElMzqeyeGBWazWYjI1Q==',//账号一的好友shareCode,不同好友中间用@符号隔开
-  '1uzRU5HkaUgvy0AB5Q9VUg==@PDPM257r_KuQhil2Y7koNw==@-OvElMzqeyeGBWazWYjI1Q==',//账号二的好友shareCode，不同好友中间用@符号隔开
+  'p15jzNJ363IRRYrz5uiijQ==@kMVrN_EU0rOG1TiQJoSHjg==@95DOyNbQJjzjngdFgVJJMg==@pHv-y1iJJ5MJUv_Xlyyr9w==@NxZXFtZJEaKQGafNGjqjfA==@NFuVvgK9tljK7PtL7wIBWw==@dRuxx2i19CxsVeTasJDV4A==',
+'p15jzNJ363IRRYrz5uiijQ==@kMVrN_EU0rOG1TiQJoSHjg==@95DOyNbQJjzjngdFgVJJMg==@pHv-y1iJJ5MJUv_Xlyyr9w==@NxZXFtZJEaKQGafNGjqjfA==@NFuVvgK9tljK7PtL7wIBWw==@dRuxx2i19CxsVeTasJDV4A==',
+'p15jzNJ363IRRYrz5uiijQ==@kMVrN_EU0rOG1TiQJoSHjg==@95DOyNbQJjzjngdFgVJJMg==@pHv-y1iJJ5MJUv_Xlyyr9w==@NxZXFtZJEaKQGafNGjqjfA==@NFuVvgK9tljK7PtL7wIBWw==@dRuxx2i19CxsVeTasJDV4A==',
+'p15jzNJ363IRRYrz5uiijQ==@kMVrN_EU0rOG1TiQJoSHjg==@95DOyNbQJjzjngdFgVJJMg==@pHv-y1iJJ5MJUv_Xlyyr9w==@NxZXFtZJEaKQGafNGjqjfA==@NFuVvgK9tljK7PtL7wIBWw==@dRuxx2i19CxsVeTasJDV4A==',
+'p15jzNJ363IRRYrz5uiijQ==@kMVrN_EU0rOG1TiQJoSHjg==@95DOyNbQJjzjngdFgVJJMg==@pHv-y1iJJ5MJUv_Xlyyr9w==@NxZXFtZJEaKQGafNGjqjfA==@NFuVvgK9tljK7PtL7wIBWw==@dRuxx2i19CxsVeTasJDV4A==',
+'p15jzNJ363IRRYrz5uiijQ==@kMVrN_EU0rOG1TiQJoSHjg==@95DOyNbQJjzjngdFgVJJMg==@pHv-y1iJJ5MJUv_Xlyyr9w==@NxZXFtZJEaKQGafNGjqjfA==@NFuVvgK9tljK7PtL7wIBWw==@dRuxx2i19CxsVeTasJDV4A==',
+'p15jzNJ363IRRYrz5uiijQ==@kMVrN_EU0rOG1TiQJoSHjg==@95DOyNbQJjzjngdFgVJJMg==@pHv-y1iJJ5MJUv_Xlyyr9w==@NxZXFtZJEaKQGafNGjqjfA==@NFuVvgK9tljK7PtL7wIBWw==@dRuxx2i19CxsVeTasJDV4A=='
 ]
 // 判断github action里面是否有东东萌宠互助码
 if (process.env.DREAM_FACTORY_SHARE_CODES) {
