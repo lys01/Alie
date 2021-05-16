@@ -5,7 +5,7 @@ name: jd_cfd-京喜财富岛
 on:
   workflow_dispatch:
   schedule:
-    - cron: '21 16,23,4,10,15 * * *'
+    - cron: '35 4,10,15,16,23 * * *'
   repository_dispatch:
     types: 京喜财富岛
 jobs:
@@ -32,6 +32,9 @@ jobs:
       - name: npm install
         run: |
           npm install
+      - name: '定时0点'
+        run: |
+          python3 wait.py 23:59:59.990
       - name: '京喜财富岛'
         run: |
           node jd_cfd.js
