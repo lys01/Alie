@@ -32,6 +32,10 @@ jobs:
       - name: npm install
         run: |
           npm install
+      - name: Set up Python 3.7
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.7
       - name: '定时0点'
         run: |
           python3 wait.py 23:59:59.990
