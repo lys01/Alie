@@ -33,6 +33,9 @@ jobs:
       - name: npm install
         run: |
           npm install
+      - name: '定时0点'
+        run: |
+          python3 wait.py 23:59:59.990
       - name: '签到领现金'
         run: |
           node jd_cash.js
