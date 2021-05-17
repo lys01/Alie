@@ -44,7 +44,6 @@ jobs:
         run: |
           node jd_rankingList.js
           node jd_shop.js
-          node jd_bean_home.js
           node jd_kd.js
           node z_shake.js
           #node jd_plus_bean.js
