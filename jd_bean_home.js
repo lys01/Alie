@@ -71,8 +71,8 @@ const JD_API_HOST = 'https://api.m.jd.com/';
   for (let i = 0; i < cookiesArr.length; i++) {
     $.index = i + 1;
     if (cookiesArr[i]) {
-      $.UserName = decodeURIComponent(cookie.match(/pt_pin=([^; ]+)(?=;?)/) && cookie.match(/pt_pin=([^; ]+)(?=;?)/)[1])
       cookie = cookiesArr[i];
+      $.UserName = decodeURIComponent(cookie.match(/pt_pin=([^; ]+)(?=;?)/) && cookie.match(/pt_pin=([^; ]+)(?=;?)/)[1])
       if ($.newShareCodes.length > 1) {
         console.log(`\n【抢京豆】 ${$.UserName} 去助力排名第一的cookie`);
         // let code = $.newShareCodes[(i + 1) % $.newShareCodes.length]
