@@ -6,7 +6,7 @@ name: jd_city-城城领现金
 on:
   workflow_dispatch:
   schedule:
-    - cron: '5 0-23/1 * * *'
+    - cron: '5 0-23/2 * * *'
   # watch:
   #   types: started
   repository_dispatch:
@@ -36,6 +36,7 @@ jobs:
       - name: '运行 【城城领现金】'
         run: |
           node jd_city.js
+          node z_city_cash.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           JD_DEBUG: ${{ secrets.JD_DEBUG }}
