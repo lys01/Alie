@@ -36,7 +36,8 @@ if ($.isNode()) {
   cookiesArr = [$.getdata('CookieJD'), $.getdata('CookieJD2'), ...jsonParse($.getdata('CookiesJD') || "[]").map(item => item.cookie)].filter(item => !!item);
 }
 const JD_API_HOST = 'https://api.m.jd.com/client.action';
-let inviteCodes = ['RtGKz7j1Qg6hK4CdH4UzhWy5WJJxSBS4dAh--AI8lCDzkUgEBA@RtGKzemlRgyrLIbPQdEwgPbzuh8rwbCDW614DF272UiDCwByKg', 'RtGKz7j1Qg6hK4CdH4UzhWy5WJJxSBS4dAh--AI8lCDzkUgEBA@RtGKzemlRgyrLIbPQdEwgPbzuh8rwbCDW614DF272UiDCwByKg',
+let inviteCodes = ['RtGKz7j1Qg6hK4CdH4UzhWy5WJJxSBS4dAh--AI8lCDzkUgEBA@RtGKzemlRgyrLIbPQdEwgPbzuh8rwbCDW614DF272UiDCwByKg',
+		   'RtGKz7j1Qg6hK4CdH4UzhWy5WJJxSBS4dAh--AI8lCDzkUgEBA@RtGKzemlRgyrLIbPQdEwgPbzuh8rwbCDW614DF272UiDCwByKg',
 	'RtGKz7j1Qg6hK4CdH4UzhWy5WJJxSBS4dAh--AI8lCDzkUgEBA@RtGKzemlRgyrLIbPQdEwgPbzuh8rwbCDW614DF272UiDCwByKg',
 	'RtGKz7j1Qg6hK4CdH4UzhWy5WJJxSBS4dAh--AI8lCDzkUgEBA@RtGKzemlRgyrLIbPQdEwgPbzuh8rwbCDW614DF272UiDCwByKg',
 	'RtGKz7j1Qg6hK4CdH4UzhWy5WJJxSBS4dAh--AI8lCDzkUgEBA@RtGKzemlRgyrLIbPQdEwgPbzuh8rwbCDW614DF272UiDCwByKg'
