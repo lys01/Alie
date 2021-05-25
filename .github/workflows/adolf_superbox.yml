@@ -1,13 +1,13 @@
-name: jd_half_redrain-半点京豆雨
+name: adolf_superbox-京东超级盒子
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: '1 * * * *'
+    - cron: '30 15,0,12 * 5,6 *'
   watch:
     types: started
   repository_dispatch:
-    types: 半点京豆雨
+    types: 京东超级盒子
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -35,10 +35,10 @@ jobs:
           python-version: 3.7
       - name: '等待'
         run: |
-          python3 accwait.py 0.1 0.1 29
-      - name: '运行 【半点京豆雨】'
+          python3 wait.py 23:59:59.990
+      - name: '运行 【京东超级盒子】'
         run: |
-          node jd_half_redrain.js
+          node adolf_superbox.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           JD_DEBUG: ${{ secrets.JD_DEBUG }}
