@@ -43,7 +43,7 @@ if ($.isNode()) {
   cookiesArr = [
     $.getdata("CookieJD"),
     $.getdata("CookieJD2"),
-    ...$.toObj($.getdata("CookiesJD") || "Í[]").map((item) => item.cookie)].filter((item) => !!item);
+    ...$.toObj($.getdata("CookiesJD") || "[]").map((item) => item.cookie)].filter((item) => !!item);
 }
 !(async () => {
   if (!cookiesArr[0]) {
