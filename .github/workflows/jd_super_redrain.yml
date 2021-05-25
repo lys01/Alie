@@ -3,7 +3,7 @@ name: jd_super_redrain-整点京豆雨
 on:
   workflow_dispatch:
   schedule:
-    - cron: '30 * * * *'
+    - cron: '20 * * * *'
   watch:
     types: started
   repository_dispatch:
@@ -34,7 +34,6 @@ jobs:
           python3 wait_hour.py 1-24
       - name: '运行 【整点京豆雨】'
         run: |
-          sleep 50
           node jd_super_redrain.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
