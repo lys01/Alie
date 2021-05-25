@@ -17,7 +17,16 @@ const $ = new Env('动物联萌');
 //Node.js用户请在jdCookie.js处填写京东ck;
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 //IOS等用户直接用NobyDa的jd cookie
-let cookiesArr = [], cookie = '',secretp = '',shareCodeList = ['ZXTKT0225KkcR0pI9lDVdRnznKYKJwFjRWn6-7zx55awQ','ZXTKT0225KkcRRsY8lLfch-hwvIJIgFjRWn6-7zx55awQ'];
+let cookiesArr = [], cookie = '',secretp = '',
+shareCodeList = [
+'sSKNX-MpqKOJsNu_zcraAD-EqBqHrbzU0E3ssL_JesszxuYlIRJye8RRaqT1Kyg',
+'sSKNX-MpqKOJsNu9nJreAkpMvvMzLUuTteQr3dokBoloSDR5tfMIMwXbdgbzeeA',
+];
+inviteIdList = [
+'ZXTKT0225KkcR0pI9lDVdRnznKYKJwFjRWn6-7zx55awQ',
+'ZXTKT0225KkcRRsY8lLfch-hwvIJIgFjRWn6-7zx55awQ',
+];
+
 const JD_API_HOST = `https://api.m.jd.com/client.action?functionId=`;
 !(async () => {
   await requireConfig()
