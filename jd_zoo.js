@@ -31,8 +31,10 @@ const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 //IOS等用户直接用NobyDa的jd cookie
 let cookiesArr = [];
 $.cookie = '';
-$.inviteList = [];
-$.pkInviteList = [];
+$.inviteList = ['ZXTKT0225KkcR0pI9lDVdRnznKYKJwFjRWn6-7zx55awQ',
+'ZXTKT0225KkcRRsY8lLfch-hwvIJIgFjRWn6-7zx55awQ',];
+$.pkInviteList = ['sSKNX-MpqKOJsNu_zcraAD-EqBqHrbzU0E3ssL_JesszxuYlIRJye8RRaqT1Kyg',
+'sSKNX-MpqKOJsNu9nJreAkpMvvMzLUuTteQr3dokBoloSDR5tfMIMwXbdgbzeeA',];
 $.secretpInfo = {};
 if ($.isNode()) {
   Object.keys(jdCookieNode).forEach((item) => {
