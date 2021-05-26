@@ -6,8 +6,8 @@ on:
   workflow_dispatch:
   schedule:
     - cron: '0 0,5,11,16,18 17-31 5 *'
-  watch:
-    types: started
+  #watch:
+    #types: started
   repository_dispatch:
     types: adolf_pk
 jobs:
