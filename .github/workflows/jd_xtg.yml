@@ -5,7 +5,7 @@ name: jd_xtg-家电星推官
 on:
   workflow_dispatch:
   schedule:
-    - cron: '20 10,15 * * *'
+    - cron: '30 10,15 * * *'
   #watch:
   #  types: started
   repository_dispatch:
@@ -38,7 +38,8 @@ jobs:
           python-version: 3.7
       - name: '定时签到'
         run: |
-            python3 wait.py 23:59:59.990
+            #python3 wait.py 23:59:59.990
+            python3 wait_hour.py 1-24
       - name: '运行 【家电星推官】'
         run: |
           node jd_xtg.js
