@@ -42,6 +42,7 @@ jobs:
       - name: '运行 【家电星推官】'
         run: |
           node jd_xtg.js
+          node adolf_star.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           JD_DEBUG: ${{ secrets.JD_DEBUG }}
