@@ -5,7 +5,7 @@ name: jd_xtg-家电星推官
 on:
   workflow_dispatch:
   schedule:
-    - cron: '20 15,23 * * *'
+    - cron: '20 10,15 * * *'
   watch:
     types: started
   repository_dispatch:
