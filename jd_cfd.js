@@ -28,8 +28,8 @@ const notify = $.isNode() ? require('./sendNotify') : '';
 const jdCookieNode = $.isNode() ? require("./jdCookie.js") : "";
 $.showLog = $.getdata("cfd_showLog") ? $.getdata("cfd_showLog") === "true" : false;
 $.notifyTime = $.getdata("cfd_notifyTime");
-$.result = [];$.shareCodes = ['Jxcfd_GroupId_307_61638935',
-                              'Jxcfd_GroupId_307_1099575169955',
+$.result = [];$.shareCodes = ['Jxcfd_GroupId_308_61909237',
+                              'Jxcfd_GroupId_308_1099575443359',
 ]
 let cookiesArr = [], cookie = '', token;
 
