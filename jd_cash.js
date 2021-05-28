@@ -32,6 +32,16 @@ const randomCount = $.isNode() ? 5 : 5;
 let cash_exchange = false;//是否消耗2元红包兑换200京豆，默认否
 const inviteCodes = [
   `JBwyZeixZf4lnjM@Yhk-beWxZPkh9w@WF5uJbE@WUpuJbE@eU9YPbHFH5VfryiOlQVA@QEpuJbE@R0puJbG3bw@eU9YMLvINaRfsj-OnAtW`,
+  `JBwyZeixZf4lnjM@Yhk-beWxZPkh9w@WF5uJbE@WUpuJbE@eU9YPbHFH5VfryiOlQVA@QEpuJbE@R0puJbG3bw@eU9YMLvINaRfsj-OnAtW`,
+  `JBwyZeixZf4lnjM@Yhk-beWxZPkh9w@WF5uJbE@WUpuJbE@eU9YPbHFH5VfryiOlQVA@QEpuJbE@R0puJbG3bw@eU9YMLvINaRfsj-OnAtW`,
+  `JBwyZeixZf4lnjM@Yhk-beWxZPkh9w@WF5uJbE@WUpuJbE@eU9YPbHFH5VfryiOlQVA@QEpuJbE@R0puJbG3bw@eU9YMLvINaRfsj-OnAtW`,
+  `JBwyZeixZf4lnjM@Yhk-beWxZPkh9w@WF5uJbE@WUpuJbE@eU9YPbHFH5VfryiOlQVA@QEpuJbE@R0puJbG3bw@eU9YMLvINaRfsj-OnAtW`,
+  `JBwyZeixZf4lnjM@Yhk-beWxZPkh9w@WF5uJbE@WUpuJbE@eU9YPbHFH5VfryiOlQVA@QEpuJbE@R0puJbG3bw@eU9YMLvINaRfsj-OnAtW`,
+  `JBwyZeixZf4lnjM@Yhk-beWxZPkh9w@WF5uJbE@WUpuJbE@eU9YPbHFH5VfryiOlQVA@QEpuJbE@R0puJbG3bw@eU9YMLvINaRfsj-OnAtW`,
+  `JBwyZeixZf4lnjM@Yhk-beWxZPkh9w@WF5uJbE@WUpuJbE@eU9YPbHFH5VfryiOlQVA@QEpuJbE@R0puJbG3bw@eU9YMLvINaRfsj-OnAtW`,
+  `JBwyZeixZf4lnjM@Yhk-beWxZPkh9w@WF5uJbE@WUpuJbE@eU9YPbHFH5VfryiOlQVA@QEpuJbE@R0puJbG3bw@eU9YMLvINaRfsj-OnAtW`,
+  `JBwyZeixZf4lnjM@Yhk-beWxZPkh9w@WF5uJbE@WUpuJbE@eU9YPbHFH5VfryiOlQVA@QEpuJbE@R0puJbG3bw@eU9YMLvINaRfsj-OnAtW`,
+  `JBwyZeixZf4lnjM@Yhk-beWxZPkh9w@WF5uJbE@WUpuJbE@eU9YPbHFH5VfryiOlQVA@QEpuJbE@R0puJbG3bw@eU9YMLvINaRfsj-OnAtW`,
   `JBwyZeixZf4lnjM@Yhk-beWxZPkh9w@WF5uJbE@WUpuJbE@eU9YPbHFH5VfryiOlQVA@QEpuJbE@R0puJbG3bw@eU9YMLvINaRfsj-OnAtW`
 ]
 if ($.isNode()) {
