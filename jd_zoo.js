@@ -43,7 +43,6 @@ $.innerPkInviteList = [
 'sSKNX-MpqKOJsNu_zcraAD-EqBqHrbzU0E3ssL_JesszxuYlIRJye8RRaqT1KyU',
 'sSKNX-MpqKOJsNu9nJreAkpMvvMzLUuTteQr3dokBoloSDR5tfMIMwXbdgbzee0',
 ];
-$.hotFlag = false; //是否火爆
 if ($.isNode()) {
   Object.keys(jdCookieNode).forEach((item) => {
     cookiesArr.push(jdCookieNode[item])
@@ -77,6 +76,7 @@ if ($.isNode()) {
       $.index = i + 1;
       $.isLogin = true;
       $.nickName = $.UserName;
+      $.hotFlag = false; //是否火爆
       await TotalBean();
       console.log(`\n*****开始【京东账号${$.index}】${$.nickName || $.UserName}*****\n`);
       console.log(`\n如有未完成的任务，请多执行几次\n`);
@@ -93,7 +93,7 @@ if ($.isNode()) {
   let res = [], res2 = [];
   if (new Date().getUTCHours() + 8 >= 17) {
     res = await getAuthorShareCode() || [];
-    res2 = await getAuthorShareCode() || [];
+    res2 = await getAuthorShareCode('') || [];
   }
   if (pKHelpAuthorFlag) {
     $.innerPkInviteList = getRandomArrayElements([...$.innerPkInviteList, ...res, ...res2], [...$.innerPkInviteList, ...res, ...res2].length);
@@ -116,6 +116,7 @@ if ($.isNode()) {
         console.log(`${$.UserName} 去助力PK码 ${$.pkInviteList[i]}`);
         $.pkInviteId = $.pkInviteList[i];
         await takePostRequest('pkHelp');
+        await $.wait(2000);
       }
       $.canHelp = true;
     }
@@ -563,6 +564,7 @@ async function dealReturn(type, data) {
       }
       if(data.code === 0 && data.data && data.data.bizCode === -1002){
         $.hotFlag = true;
+        console.log(`该账户脚本执行任务火爆，暂停执行任务，请手动做任务或者等待解决脚本火爆问题`)
       }
       break;
     case 'zoo_getTaskDetail':
