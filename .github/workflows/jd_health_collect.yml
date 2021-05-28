@@ -6,7 +6,7 @@ name: jd_health_collect-健康社区-收能量
 on:
   workflow_dispatch:
   schedule:
-    - cron: '*/10 * * * *'
+    - cron: '*/15 * * * *'
   repository_dispatch:
     types: 东东健康社区-收能量
 jobs:
