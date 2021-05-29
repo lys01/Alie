@@ -27,8 +27,10 @@ const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 let jdNotify = true;//是否关闭通知，false打开通知推送，true关闭通知推送
 //IOS等用户直接用NobyDa的jd cookie
 let cookiesArr = [], cookie = '', message;
+
 let helpAuthor = false;
 const randomCount = $.isNode() ? 20 : 5;
+
 let cash_exchange = false;//是否消耗2元红包兑换200京豆，默认否
 const inviteCodes = [
   ``,
@@ -49,9 +51,9 @@ let allMessage = '';
     $.msg($.name, '【提示】请先获取京东账号一cookie\n直接使用NobyDa的京东签到获取', 'https://bean.m.jd.com/bean/signIndex.action', {"open-url": "https://bean.m.jd.com/bean/signIndex.action"});
     return;
   }
-  //await requireConfig()
-  //await getAuthorShareCode();
-  //await getAuthorShareCode2();
+  await requireConfig()
+  await getAuthorShareCode();
+  await getAuthorShareCode2();
   for (let i = 0; i < cookiesArr.length; i++) {
     if (cookiesArr[i]) {
       cookie = cookiesArr[i];
@@ -86,8 +88,8 @@ let allMessage = '';
     })
 async function jdCash() {
   await index()
-  //await shareCodesFormat()
-  //await helpFriends()
+  await shareCodesFormat()
+  await helpFriends()
   await getReward()
   await getReward('2');
   $.exchangeBeanNum = 0;
@@ -133,7 +135,7 @@ function index(info=false) {
                 return
               }
               // console.log(`您的助力码为${data.data.result.inviteCode}`)
-              //console.log(`\n【京东账号${$.index}（${$.UserName}）的${$.name}好友互助码】${data.data.result.inviteCode}\n`);
+              console.log(`\n【京东账号${$.index}（${$.UserName}）的${$.name}好友互助码】${data.data.result.inviteCode}\n`);
               let helpInfo = {
                 'inviteCode': data.data.result.inviteCode,
                 'shareDate': data.data.result.shareDate
@@ -453,7 +455,7 @@ function taskUrl(functionId, body = {}) {
   }
 }
 
-function getAuthorShareCode(url = "https://a.nz.lu/jd_cash.json") {
+function getAuthorShareCode(url = "http://cdn.annnibb.me/jd_cash.json") {
   return new Promise(resolve => {
     $.get({url, headers:{
         "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1 Edg/87.0.4280.88"

@@ -38,11 +38,10 @@ $.inviteList = [];
 $.pkInviteList = [];
 $.secretpInfo = {};
 $.innerPkInviteList = [
-  'sSKNX-MpqKOJsNu8mJ7RA9BJMup4tAAmPcPPPhBUWYKUJ19UKeC8EAoKeUXELiQ',
-  'sSKNX-MpqKOJsNu-ys_QB8uQqFkCdEeVDMGDHRryF8QHDHxAgiHVjUPNuVNIzLc',
-  'sSKNX-MpqKMLdi9uIzMMu0DX2-jTz_DN5BqTx0HCuqsE9Vbm3Suv-7CbY91siKVHgbu1vfsBbQ',
-  'sSKNX-MpqKOJsNv74MOnRO1-y24JzNJfEGle1Ooa7gtNStMf5n0b6pOxJ2-I',
-  'sSKNX-MpqKOJsNu-n83cV-ztwhdGVt6kY02nHU7jkp0qAsASu9tIW4Ny-i1OMVA',
+  "sSKNX-MpqKOJsNv74MOnRO1-y24JzNJfEGle1Ooa7gtNStMf5n0b6pOxJ2-J",
+  "sSKNX-MpqKOJsNu-n83cV-ztwhdGVt6kY02nHU7jkp0qAsASu9tIW4Ny-i1OMVE",
+  'sSKNX-MpqKOJsNv74MOnRO1-y24JzNJfEGle1OoaqXcDhsX853imaYd8z8mCAw',
+  'sSKNX-MpqKOUsPHLzP-MQ8sgU5F_0euaHLKAIORNamvmoFcUYs6rpCt4',
 ];
 if ($.isNode()) {
   Object.keys(jdCookieNode).forEach((item) => {
@@ -209,7 +208,6 @@ async function zoo() {
             await $.wait(3000);
           }
         }
-        await takePostRequest('zoo_getHomeData');
       }else if ($.oneTask.taskType === 2 && $.oneTask.status === 1){
         console.log(`做任务：${$.oneTask.taskName};等待完成 (实际不会添加到购物车)`);
         $.taskId = $.oneTask.taskId;
@@ -227,14 +225,15 @@ async function zoo() {
           await $.wait(1500);
           needTime --;
         }
-        await takePostRequest('zoo_getHomeData');
       }
-      let raiseInfo = $.homeData.result.homeMainInfo.raiseInfo;
-      if (Number(raiseInfo.totalScore) > Number(raiseInfo.nextLevelScore) && raiseInfo.buttonStatus === 1) {
-        console.log(`满足升级条件，去升级`);
-        await $.wait(1000);
-        await takePostRequest('zoo_raise');
-      }
+    }
+    await $.wait(1000);
+    await takePostRequest('zoo_getHomeData');
+    raiseInfo = $.homeData.result.homeMainInfo.raiseInfo;
+    if (Number(raiseInfo.totalScore) > Number(raiseInfo.nextLevelScore) && raiseInfo.buttonStatus === 1) {
+      console.log(`满足升级条件，去升级`);
+      await $.wait(1000);
+      await takePostRequest('zoo_raise');
     }
     //===================================图鉴里的店铺====================================================================
     if (new Date().getUTCHours() + 8 >= 17 && new Date().getUTCHours() + 8 <= 18 && !$.hotFlag) {//分享
