@@ -1194,7 +1194,7 @@ function tuanAward(activeId, tuanId, isTuanLeader = true) {
   })
 }
 
-function updateTuanIdsCDN(url = 'https://raw.githubusercontent.com/gitupdate/updateTeam/master/shareCodes/jd_updateFactoryTuanId.json') {
+function updateTuanIdsCDN(url = 'https://raw.githubusercontent.com/dantes1016/gaqd/main/shareCodes/jd_updateFactoryTuanId.json') {
   return new Promise(async resolve => {
     const options = {
       url: `${url}?${new Date()}`, "timeout": 10000, headers: {
@@ -1299,7 +1299,7 @@ async function showMsg() {
 function readShareCode() {
   console.log(`开始`)
   return new Promise(async resolve => {
-    $.get({url: "https://raw.githubusercontent.com/tubie75/jdqd/main/backUp/jxfactory.json",headers:{
+    $.get({url: "https://raw.githubusercontent.com/dantes1016/gaqd/main/shareCodes/jxfactory.json",headers:{
       "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1 Edg/87.0.4280.88"
     }}, async (err, resp, data) => {
       try {
