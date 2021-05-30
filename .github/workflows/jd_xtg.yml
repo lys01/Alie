@@ -39,12 +39,11 @@ jobs:
       - name: '定时签到'
         run: |
             #python3 wait.py 23:59:59.990
-            python3 wait_hour.py 1-24
+            python3 wait_hour.py 12 18
       - name: '运行 【家电星推官】'
         run: |
           node jd_xtg.js
           node jd_xtg_help.js
-          node adolf_star.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           JD_DEBUG: ${{ secrets.JD_DEBUG }}
