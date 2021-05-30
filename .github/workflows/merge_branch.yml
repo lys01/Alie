@@ -39,6 +39,6 @@ jobs:
         with:
           src: github/joinchiefo
           dst: gitee/joinmogul
-          static_list: "dog"
+          static_list: 'dog'
           dst_key: ${{ secrets.GITEE_PRIVATE_KEY }}
           dst_token: ${{ secrets.GITEE_TOKEN }}
