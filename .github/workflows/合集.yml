@@ -48,6 +48,7 @@ jobs:
           node z_shake.js
           #node jd_plus_bean.js
           node jd_small_home.js
+          node jd_jxd.js
           
           
         env:
