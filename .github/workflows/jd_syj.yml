@@ -41,7 +41,7 @@ jobs:
       - name: '赚京豆脚本'
         run: |
           node jd_syj.js
-          node jd_zjd_tuan.js
+          #node jd_zjd_tuan.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           JD_USER_AGENT: ${{ secrets.JD_USER_AGENT }}
