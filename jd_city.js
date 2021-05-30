@@ -36,12 +36,9 @@ if ($.isNode()) {
   cookiesArr = [$.getdata('CookieJD'), $.getdata('CookieJD2'), ...jsonParse($.getdata('CookiesJD') || "[]").map(item => item.cookie)].filter(item => !!item);
 }
 const JD_API_HOST = 'https://api.m.jd.com/client.action';
-let inviteCodes = ['RtGKz7j1Qg6hK4CdH4UzhWy5WJJxSBS4dAh--AI8lCDzkUgEBA@RtGKzemlRgyrLIbPQdEwgPbzuh8rwbCDW614DF272UiDCwByKg',
-		   'RtGKz7j1Qg6hK4CdH4UzhWy5WJJxSBS4dAh--AI8lCDzkUgEBA@RtGKzemlRgyrLIbPQdEwgPbzuh8rwbCDW614DF272UiDCwByKg',
+let inviteCodes = ['RtGKz7j1Qg6hK4CdH4UzhWy5WJJxSBS4dAh--AI8lCDzkUgEBA@RtGKzemlRgyrLIbPQdEwgPbzuh8rwbCDW614DF272UiDCwByKg', 
 	'RtGKz7j1Qg6hK4CdH4UzhWy5WJJxSBS4dAh--AI8lCDzkUgEBA@RtGKzemlRgyrLIbPQdEwgPbzuh8rwbCDW614DF272UiDCwByKg',
-	'RtGKz7j1Qg6hK4CdH4UzhWy5WJJxSBS4dAh--AI8lCDzkUgEBA@RtGKzemlRgyrLIbPQdEwgPbzuh8rwbCDW614DF272UiDCwByKg',
-	'RtGKz7j1Qg6hK4CdH4UzhWy5WJJxSBS4dAh--AI8lCDzkUgEBA@RtGKzemlRgyrLIbPQdEwgPbzuh8rwbCDW614DF272UiDCwByKg'
-]
+	]
 !(async () => {
   if (!cookiesArr[0]) {
     $.msg($.name, '【提示】请先获取京东账号一cookie\n直接使用NobyDa的京东签到获取', 'https://bean.m.jd.com/bean/signIndex.action', {"open-url": "https://bean.m.jd.com/bean/signIndex.action"});
@@ -256,7 +253,9 @@ function city_lotteryAward() {
 function readShareCode() {
   console.log(`开始`)
   return new Promise(async resolve => {
-    $.get({url: `http://share.turinglabs.net/api/v3/city/query/10/`, 'timeout': 10000}, (err, resp, data) => {
+    $.get({url: "https://raw.githubusercontent.com/tubie75/jdqd/main/backUp/city.json",headers:{
+      "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1 Edg/87.0.4280.88"
+    }}, async (err, resp, data) => {
       try {
         if (err) {
           console.log(`${JSON.stringify(err)}`)
@@ -288,10 +287,10 @@ function shareCodesFormat() {
       const tempIndex = $.index > inviteCodes.length ? (inviteCodes.length - 1) : ($.index - 1);
       $.newShareCodes = inviteCodes[tempIndex].split('@');
     }
-    //const readShareCodeRes = await readShareCode();
-    //if (readShareCodeRes && readShareCodeRes.code === 200) {
-   //   $.newShareCodes = [...new Set([...$.newShareCodes, ...(readShareCodeRes.data || [])])];
-    //}
+   // const readShareCodeRes = await readShareCode();
+   // if (readShareCodeRes && readShareCodeRes.code === 200) {
+    //  $.newShareCodes = [...new Set([...$.newShareCodes, ...(readShareCodeRes.data || [])])];
+//}
     console.log(`第${$.index}个京东账号将要助力的好友${JSON.stringify($.newShareCodes)}`)
     resolve();
   })
