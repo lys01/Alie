@@ -42,3 +42,4 @@ jobs:
           static_list: 'dog' #单引号,双引号报错
           dst_key: ${{ secrets.GITEE_PRIVATE_KEY }}
           dst_token: ${{ secrets.GITEE_TOKEN }}
+          force_update: true
