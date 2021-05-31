@@ -7,7 +7,7 @@ on:
   watch:
     types: started
   push:
-    branches: [ mian ]
+    branches: [ main ]
   repository_dispatch:
     types: sync-lxk0301-jd_scripts
 jobs:
