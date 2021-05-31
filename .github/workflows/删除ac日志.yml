@@ -11,7 +11,7 @@ jobs:
       - name: Delete_workflow_runs
         uses: smallprogram/delete-workflow-runs@main
         with:
-          token: ${{ secrets.GIT_TOKEN }}
-          repository: ${{ github.repository }}
+          #token: ${{ secrets.GIT_TOKEN }}
+          #repository: ${{ github.repository }}
           retain_days: 2
           keep_minimum_runs: 6
