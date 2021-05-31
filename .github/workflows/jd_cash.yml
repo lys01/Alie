@@ -6,7 +6,7 @@ name: jd_cash-签到领现金
 on:
   workflow_dispatch:
   schedule:
-    - cron: '35 0,4,15 * * *'
+    - cron: '35 0,4,15,16 * * *'
   repository_dispatch:
     types: 签到领现金
 jobs:
@@ -17,8 +17,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-        with:
-          repository: tubie75/jdqd
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
