@@ -34,7 +34,6 @@ const pKHelpAuthorFlag = true;//是否助力作者PK  true 助力，false 不助
 //IOS等用户直接用NobyDa的jd cookie
 let cookiesArr = [];
 $.cookie = '';
-$.inviteList = [];
 $.pkInviteList = [
   {
     'ues': 'xxxx',
@@ -45,8 +44,10 @@ $.pkInviteList = [
 $.secretpInfo = {};
 $.innerPkInviteList = [
   'sSKNX-MpqKOJsNu_zcraAD-EqBqHrbzU0E3ssL_JesszxuYlIRJye8RRaqT1Ky9e',
-  'sSKNX-MpqKOJsNu9nJreAkpMvvMzLUuTteQr3dokBoloSDR5tfMIMwXbdgbzeefB',
-  
+  'sSKNX-MpqKOJsNu9nJreAkpMvvMzLUuTteQr3dokBoloSDR5tfMIMwXbdgbzeefB', 
+];
+$.secretpInfo = {};
+$.innerPkInviteList = [
 ];
 if ($.isNode()) {
   Object.keys(jdCookieNode).forEach((item) => {
@@ -98,9 +99,9 @@ if ($.isNode()) {
   let res = [], res2 = [], res3 = [];
   res3 = await getAuthorShareCode('http://cdn.boledao.com/eb6fdc36b281b7d5eabf33396c2683a2.json');
   if (!res3) await getAuthorShareCode('http://cdn.boledao.com/eb6fdc36b281b7d5eabf33396c2683a2.json')
-  if (new Date().getUTCHours() + 8 >= 17) {
+  if (new Date().getHours()>= 17) {
     res = await getAuthorShareCode() || [];
-    res2 = await getAuthorShareCode('') || [];
+    res2 = await getAuthorShareCode() || [];
   }
   if (pKHelpAuthorFlag) {
     $.innerPkInviteList = getRandomArrayElements([...$.innerPkInviteList, ...res, ...res2, ...res3], [...$.innerPkInviteList, ...res, ...res2, ...res3].length);
@@ -117,7 +118,7 @@ if ($.isNode()) {
     $.index = i + 1;
     //console.log($.inviteList);
     //pk助力
-    if (new Date().getUTCHours() + 8 >= 9) {
+    if (new Date().getHours() >= 9) {
       console.log(`\n******开始内部京东账号【怪兽大作战pk】助力*********\n`);
       for (let i = 0; i < $.pkInviteList.length && pKHelpFlag && $.canHelp; i++) {
         console.log(`${$.UserName} 去助力PK码 ${$.pkInviteList[i]}`);
@@ -243,7 +244,7 @@ async function zoo() {
       await takePostRequest('zoo_raise');
     }
     //===================================图鉴里的店铺====================================================================
-    if (new Date().getUTCHours() + 8 >= 17 && new Date().getUTCHours() + 8 <= 18 && !$.hotFlag) {//分享
+    if (new Date().getHours()>= 17 && new Date().getHours()<= 18 && !$.hotFlag) {//分享
       $.myMapList = [];
       await takePostRequest('zoo_myMap');
       for (let i = 0; i < $.myMapList.length; i++) {
@@ -255,7 +256,7 @@ async function zoo() {
         }
       }
     }
-    if (new Date().getUTCHours() + 8 >= 14 && new Date().getUTCHours() + 8 <= 17 && !$.hotFlag){//30个店铺，为了避免代码执行太久，下午2点到5点才做店铺任务
+    if (new Date().getHours() >= 14 && new Date().getHours() <= 17 && !$.hotFlag){//30个店铺，为了避免代码执行太久，下午2点到5点才做店铺任务
       console.log(`去做店铺任务`);
       $.shopInfoList = [];
       await takePostRequest('qryCompositeMaterials');
