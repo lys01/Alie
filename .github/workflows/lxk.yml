@@ -1,13 +1,13 @@
 # File: .github/workflows/repo-sync.yml
-name: jddj
+name: lxk
 on:
   schedule:
-    - cron: '0 15 * * *'
+    - cron: '0 15,4 * * *'
   workflow_dispatch:
   watch:
     types: started
   repository_dispatch:
-    types: jddj
+    types: lxk
 jobs:
   repo-sync:
     env:
@@ -24,7 +24,7 @@ jobs:
         uses: repo-sync/github-sync@v2
         if: env.PAT
         with:
-          source_repo: "https://github.com/wulove/my_scripts.git"
-          source_branch: "jddj"
-          destination_branch: "jddj"
+          source_repo: "https://github.com/chinnkarahoi/jd_scripts.git"
+          source_branch: "master"
+          destination_branch: "lxk"
           github_token: ${{ github.event.client_payload.PAT || secrets.PAT }}
