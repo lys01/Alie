@@ -38,13 +38,13 @@ let tokenArr = []; // 用户 token 数组
 let currentToken = {}; // 当前用户 token
 let shareCode = ''; // 内置助力码
 let jxncShareCodeArr = [
-'{\"smp\":\"2f9bd788cc1cea18d0b55c0584b93f59\",\"active\":\"jdnc_1_2yuanhuangguog210422_2\",\"joinnum\":1}@{\"smp\":\"b9310b96493ee10b3f321402c8939c93\",\"active\":\"jdnc_1_2yuanhuangguog210422_2\",\"joinnum\":1}',
-'{\"smp\":\"2f9bd788cc1cea18d0b55c0584b93f59\",\"active\":\"jdnc_1_2yuanhuangguog210422_2\",\"joinnum\":1}@{\"smp\":\"b9310b96493ee10b3f321402c8939c93\",\"active\":\"jdnc_1_2yuanhuangguog210422_2\",\"joinnum\":1}',
-'{\"smp\":\"2f9bd788cc1cea18d0b55c0584b93f59\",\"active\":\"jdnc_1_2yuanhuangguog210422_2\",\"joinnum\":1}@{\"smp\":\"b9310b96493ee10b3f321402c8939c93\",\"active\":\"jdnc_1_2yuanhuangguog210422_2\",\"joinnum\":1}',
-'{\"smp\":\"2f9bd788cc1cea18d0b55c0584b93f59\",\"active\":\"jdnc_1_2yuanhuangguog210422_2\",\"joinnum\":1}@{\"smp\":\"b9310b96493ee10b3f321402c8939c93\",\"active\":\"jdnc_1_2yuanhuangguog210422_2\",\"joinnum\":1}',
-'{\"smp\":\"2f9bd788cc1cea18d0b55c0584b93f59\",\"active\":\"jdnc_1_2yuanhuangguog210422_2\",\"joinnum\":1}@{\"smp\":\"b9310b96493ee10b3f321402c8939c93\",\"active\":\"jdnc_1_2yuanhuangguog210422_2\",\"joinnum\":1}',
-'{\"smp\":\"2f9bd788cc1cea18d0b55c0584b93f59\",\"active\":\"jdnc_1_2yuanhuangguog210422_2\",\"joinnum\":1}@{\"smp\":\"b9310b96493ee10b3f321402c8939c93\",\"active\":\"jdnc_1_2yuanhuangguog210422_2\",\"joinnum\":1}',
-'{\"smp\":\"2f9bd788cc1cea18d0b55c0584b93f59\",\"active\":\"jdnc_1_2yuanhuangguog210422_2\",\"joinnum\":1}@{\"smp\":\"b9310b96493ee10b3f321402c8939c93\",\"active\":\"jdnc_1_2yuanhuangguog210422_2\",\"joinnum\":1}'
+'{\"smp\":\"2f9bd788cc1cea18d0b55c0584b93f59\",\"active\":\"jdnc_1_3yuanshupian210601_2\",\"joinnum\":1}@{\"smp\":\"b9310b96493ee10b3f321402c8939c93\",\"active\":\"jdnc_1_3yuanshupian210601_2\",\"joinnum\":1}',
+'{\"smp\":\"2f9bd788cc1cea18d0b55c0584b93f59\",\"active\":\"jdnc_1_3yuanshupian210601_2\",\"joinnum\":1}@{\"smp\":\"b9310b96493ee10b3f321402c8939c93\",\"active\":\"jdnc_1_3yuanshupian210601_2\",\"joinnum\":1}',
+'{\"smp\":\"2f9bd788cc1cea18d0b55c0584b93f59\",\"active\":\"jdnc_1_3yuanshupian210601_2\",\"joinnum\":1}@{\"smp\":\"b9310b96493ee10b3f321402c8939c93\",\"active\":\"jdnc_1_3yuanshupian210601_2\",\"joinnum\":1}',
+'{\"smp\":\"2f9bd788cc1cea18d0b55c0584b93f59\",\"active\":\"jdnc_1_3yuanshupian210601_2\",\"joinnum\":1}@{\"smp\":\"b9310b96493ee10b3f321402c8939c93\",\"active\":\"jdnc_1_3yuanshupian210601_2\",\"joinnum\":1}',
+'{\"smp\":\"2f9bd788cc1cea18d0b55c0584b93f59\",\"active\":\"jdnc_1_3yuanshupian210601_2\",\"joinnum\":1}@{\"smp\":\"b9310b96493ee10b3f321402c8939c93\",\"active\":\"jdnc_1_3yuanshupian210601_2\",\"joinnum\":1}',
+'{\"smp\":\"2f9bd788cc1cea18d0b55c0584b93f59\",\"active\":\"jdnc_1_3yuanshupian210601_2\",\"joinnum\":1}@{\"smp\":\"b9310b96493ee10b3f321402c8939c93\",\"active\":\"jdnc_1_3yuanshupian210601_2\",\"joinnum\":1}',
+'{\"smp\":\"2f9bd788cc1cea18d0b55c0584b93f59\",\"active\":\"jdnc_1_3yuanshupian210601_2\",\"joinnum\":1}@{\"smp\":\"b9310b96493ee10b3f321402c8939c93\",\"active\":\"jdnc_1_3yuanshupian210601_2\",\"joinnum\":1}'
 ]; // 用户 助力码 数组
 let currentShareCode = []; // 当前用户 要助力的助力码
 const openUrl = `openjd://virtual?params=${encodeURIComponent('{ "category": "jump", "des": "m", "url": "https://wqsh.jd.com/sns/201912/12/jxnc/detail.html?ptag=7155.9.32&smp=b47f4790d7b2a024e75279f55f6249b9&active=jdnc_1_chelizi1205_2"}',)}`; // 打开京喜农场
