@@ -32,6 +32,7 @@ jobs:
       - name: npm install
         run: |
           npm install
+      - name: '运行 【明星小店(星店长)】'
         run: |
           node jd_star_shop.js
         env:
