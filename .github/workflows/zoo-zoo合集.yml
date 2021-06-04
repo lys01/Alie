@@ -39,6 +39,8 @@ jobs:
           node zooBaojiexiaoxiaole.js
           sleep 30
           node zooBrandcity.js
+          sleep
+          node jd_mcxhd.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           JD_DEBUG: ${{ secrets.JD_DEBUG }}
