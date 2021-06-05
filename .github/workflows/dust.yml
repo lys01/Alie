@@ -1,5 +1,5 @@
 # File: .github/workflows/repo-sync.yml
-name: tubie
+name: dust
 on:
   schedule:
     - cron: '10 6,15 * * *'
@@ -7,7 +7,7 @@ on:
   watch:
     types: started
   repository_dispatch:
-    types: tubie
+    types: dust
 jobs:
   repo-sync:
     env:
@@ -24,7 +24,7 @@ jobs:
         uses: repo-sync/github-sync@v2
         if: env.PAT
         with:
-          source_repo: "https://github.com/tubie75/jdqd.git"
+          source_repo: "https://github.com/dantes1016/autorepo.git"
           source_branch: "main"
           destination_branch: "dust"
           github_token: ${{ github.event.client_payload.PAT || secrets.PAT }}
