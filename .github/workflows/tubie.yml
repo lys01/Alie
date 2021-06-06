@@ -1,8 +1,8 @@
 # File: .github/workflows/repo-sync.yml
-name: hajiu
+name: tubie75
 on:
   schedule:
-    - cron: '1 14 * * *'
+    - cron: '1 5,14 * * *'
   workflow_dispatch:
   watch:
     types: started
