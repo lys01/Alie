@@ -1,3 +1,1 @@
-vless://186c2842-2ff6-4d53-bd9b-1194afd63e1e@www.gov.se:80?encryption=none&security=none&fp=randomized&type=ws&host=cfw.airnps.workers.dev&path=%2F%3Fed%3D2048#Misaka-workers
-ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTplN2RmOWNlZi0yZGJlLTQ5ZTktOWM1MS1jOGQ5YTE0YThkNmZAbmMudDEuZ28wMDIueHl6OjE5NTUx#%E2%98%91%EF%B8%8F%20%E9%80%9F%E5%BA%A6%E6%9C%89%E5%BF%AB%E6%85%A2-%E8%AF%B7%E8%87%AA%E6%B5%8B%20%E2%98%91%EF%B8%8F
-ssr://MjMxMTAzLmxldmVsMy5zZGwtc3ouY29tOjE5OTcwOmF1dGhfYWVzMTI4X21kNTphZXMtMjU2LWNmYjpodHRwX3NpbXBsZTpaR0ZxYTJScmFtUmhKbVJxTWpObmMyRS8_cmVtYXJrcz01WVd6NXJPbzViNnU1TC1oNVlXczVMeVg1WS0zOEotUmlmQ2ZqNzhnYVc5ejZidVI1NmVSNW9xQSZwcm90b3BhcmFtPSZvYmZzcGFyYW09
+
